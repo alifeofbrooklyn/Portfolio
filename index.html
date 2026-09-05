@@ -65,20 +65,19 @@
 
             <!-- Left Nav (Desktop) -->
             <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm text-gray-600 dark:text-gray-400">
+                <!-- กดแล้วเลื่อนไปที่ส่วน Web Developer -->
+                <a href="#about" class="hover:text-black dark:hover:text-white transition-colors" data-i18n="nav.about">ABOUT ME</a>
                 <a href="#work" class="hover:text-black dark:hover:text-white transition-colors" data-i18n="nav.work">WORK</a>
-                <a href="javascript:void(0)" onclick="openAboutModal()" class="hover:text-black dark:hover:text-white transition-colors" data-i18n="nav.about">ABOUT ME</a>
                 <a href="#services" class="hover:text-black dark:hover:text-white transition-colors" data-i18n="nav.services">SERVICES</a>
             </nav>
 
             <!-- Logo (Center) -->
             <div class="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
-                <!-- Added dark:invert class to flip color in dark mode -->
-                <img src="https://img2.pic.in.th/pic/SAD-GUY-LOGO.png" alt="SAD GUY LOGO" class="h-8 md:h-10 dark:invert transition-all duration-300">
+                <span class="font-black text-xl tracking-tighter text-black dark:text-white">PORTFOLIO</span>
             </div>
             <!-- Mobile Logo -->
              <div class="md:hidden">
-                <!-- Added dark:invert class -->
-                <img src="https://img2.pic.in.th/pic/SAD-GUY-LOGO.png" alt="SAD GUY LOGO" class="h-7 md:h-8 dark:invert transition-all duration-300">
+                <span class="font-black text-lg tracking-tighter text-black dark:text-white">PORTFOLIO</span>
             </div>
 
             <!-- Right Icons -->
@@ -100,11 +99,6 @@
                         <i data-lucide="x" class="w-4 h-4"></i>
                     </button>
                 </div>
-                
-                <!-- User Icon (Opens Login/Register Modal) -->
-                <button onclick="openRegisterModal()" class="p-1 hidden sm:block hover:opacity-70 transition-opacity">
-                    <i data-lucide="user" class="w-6 h-6"></i>
-                </button>
                 
                 <!-- Language Toggle Button -->
                 <button 
@@ -130,8 +124,8 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 border-t p-6 shadow-lg flex flex-col space-y-4 bg-white dark:bg-neutral-900 border-gray-200 dark:border-neutral-800">
+            <a href="#about" class="font-bold text-lg" onclick="toggleMenu()" data-i18n="nav.about">ABOUT ME</a>
             <a href="#work" class="font-bold text-lg" onclick="toggleMenu()" data-i18n="nav.work">WORK</a>
-            <a href="javascript:void(0)" class="font-bold text-lg" onclick="toggleMenu(); openAboutModal()" data-i18n="nav.about">ABOUT ME</a>
             <a href="#services" class="font-bold text-lg" onclick="toggleMenu()" data-i18n="nav.services">SERVICES</a>
             <div class="pt-4 border-t border-gray-200 dark:border-neutral-800">
                <input 
@@ -151,57 +145,70 @@
     <main class="flex-grow container mx-auto px-6 py-12 max-w-7xl">
         
         <!-- TEXT SECTION 1 (Hero) -->
-        <section class="mb-16">
+        <section id="about" class="mb-16 scroll-mt-24">
             <h2 class="text-3xl md:text-5xl font-black uppercase mb-6 tracking-tight text-black dark:text-white" data-i18n="hero.title">
-                UI/UX DESIGN & WEB DEVELOPMENT
+                Web Developer
             </h2>
             <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed max-w-4xl" data-i18n="hero.p1">
-                Digital experiences designed to help your brand become its personal best. Because when it comes to performing at your max in the digital world, there should be no obstacles – least of all your website.
-            </p>
-            <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed max-w-4xl" data-i18n="hero.p2">
-                Functional and beautiful, I create user interfaces you'll love to use. Since 2025, I've designed and developed the web applications I want to see in the world, because innovation and user experience are what I know best.
+                Final-year Information Technology student seeking a Web / Front-End Developer Internship. Experienced in building responsive, user-centric web applications using React, Next.js, and Tailwind CSS. Eager to apply clean code principles and UI/UX design to contribute to real-world software projects and learn within a collaborative team environment.
             </p>
         </section>
 
         <!-- TEXT SECTION 2 (Projects Intro) -->
         <section class="mb-20">
             <h2 class="text-2xl md:text-3xl font-black uppercase mb-4 tracking-tight text-black dark:text-white" data-i18n="projects.title">
-                PROJECTS BUILT IN THE CODE EDITOR
+                career objective
             </h2>
             <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed max-w-5xl text-sm md:text-base" data-i18n="projects.p1">
-                My legacy was built in the code editor. This portfolio was founded with a love for coding and that passion continues into all my projects today. You'll find the latest innovation in web technology and design to help you perform at your best and recover in style.
+                An ambitious and detail-oriented Junior Front-End Developer with a strong foundation in modern web technologies including React.js, Next.js, and Tailwind CSS. Passionate about bridging the gap between sophisticated UI/UX design and high-performance, clean code. Dedicated to continuous learning, building responsive web applications that deliver seamless user experiences, and mastering full-stack capabilities—including backend integration and database management. Eager to contribute technical creativity, problem-solving skills, and a strong collaborative mindset to a dynamic development team while driving meaningful digital solutions.
             </p>
-            
-            <div class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed max-w-5xl text-sm md:text-base">
-                <span data-i18n="projects.p2_intro">My</span> 
-                <span class="font-bold text-black dark:text-white" data-i18n="projects.p2_fe">Frontend Work</span> 
-                <span data-i18n="projects.p2_text1">features pixel-perfect</span> 
-                <span class="font-bold text-black dark:text-white" data-i18n="projects.p2_react">React components</span> 
-                <span data-i18n="projects.p2_text2">and</span> 
-                <span class="font-bold text-black dark:text-white" data-i18n="projects.p2_tail">Tailwind CSS layouts</span> 
-                <span data-i18n="projects.p2_text3">. Whilst my</span> 
-                <span class="font-bold text-black dark:text-white" data-i18n="projects.p2_be">Backend Systems</span> 
-                <span data-i18n="projects.p2_text4">are designed for a range of scales and feature sophisticated API integrations.</span>
+            <div class="bg-gray-50 dark:bg-neutral-900 p-8 border border-gray-100 dark:border-neutral-800">
+                <!-- Tech Stack & SKILLS -->
+                <h3 class="font-bold text-xl mb-6 text-black dark:text-white uppercase tracking-wider">Tech Stack & SKILLS</h3>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                        <span class="font-bold text-black dark:text-white">Front-End :</span> HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Axios
+                    </div>
+                    <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                        <span class="font-bold text-black dark:text-white">Backend :</span> Node.js, Express, REST API, MySQL
+                    </div>
+                    <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                        <span class="font-bold text-black dark:text-white">Tools & Workflow Automation :</span> Git, GitHub, Figma, Postman, VS Code
+                    </div>
+                </div>
+
+                <!-- Soft Skills & Languages -->
+                <div class="pt-8 border-t border-gray-200 dark:border-neutral-800">
+                    <h3 class="font-bold text-xl mb-6 text-black dark:text-white uppercase tracking-wider">Soft Skills & Languages</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                            <span class="font-bold text-black dark:text-white">Soft Skills :</span> Problem Solving, Team Collaboration, Agile Mindset
+                        </div>
+                        <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                            <span class="font-bold text-black dark:text-white">Thai :</span> Native
+                        </div>
+                        <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                            <span class="font-bold text-black dark:text-white">English :</span> Technical Reading & Basic Communication
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- FEATURED CARDS (Work Section) -->
         <section id="work" class="border-t pt-16 border-gray-200 dark:border-neutral-800 scroll-mt-20">
             <div class="flex justify-between items-end mb-8">
-                <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-black dark:text-white" data-i18n="cards.sectionTitle">MORE ABOUT MY WORK</h2>
+                <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-black dark:text-white" data-i18n="cards.sectionTitle">My Projects</h2>
                 <p id="no-results-msg" class="hidden text-sm text-gray-500">No projects found.</p>
             </div>
             
             <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Card 1: FOR JOJI (Popup) -->
+                <!-- Card 1 -->
                 <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Joji-a.lifeofbrooklyn/', 'FOR JOJI')" class="group project-card cursor-pointer block" data-keywords="joji sound music web">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <!-- Project Background Image -->
-                        <img src="https://img5.pic.in.th/file/secure-sv1/jojizzz.png" alt="Joji Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <!-- Dark Overlay for Text Readability -->
                         <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        
                         <div class="absolute inset-0 flex items-center justify-center z-10">
                            <div class="text-center px-4">
                              <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c1_title_sub">FOR JOJI<br>DISCOVER YOUR SOUND</h4>
@@ -215,14 +222,10 @@
                     </div>
                 </div>
 
-                <!-- Card 2: Space-Ideas (Popup) -->
+                <!-- Card 2 -->
                 <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Space-Ideas-a.lifeofbrooklyn/', 'SPACE IDEAS')" class="group project-card cursor-pointer block" data-keywords="space ideas room decoration interior">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-800 dark:border-neutral-800">
-                        <!-- Project Background Image -->
-                        <img src="https://img2.pic.in.th/pic/spacezzz.png" alt="Space Ideas" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-
                         <div class="absolute inset-0 flex items-center justify-center z-10">
                           <div class="text-center px-4">
                              <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c2_title_sub">SPACE-IDEAS<br>INTERIOR GUIDE</h4>
@@ -236,14 +239,10 @@
                     </div>
                 </div>
 
-                 <!-- Card 3: NEXUS Store (Popup) -->
+                 <!-- Card 3 -->
                 <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/E-commerce-a.lifeofbrooklyn/', 'NEXUS STORE')" class="group project-card cursor-pointer block" data-keywords="nexus store ecommerce shop">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <!-- Project Background Image -->
-                        <img src="https://img5.pic.in.th/file/secure-sv1/e-comzzz.png" alt="Nexus Store" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-
                         <div class="absolute inset-0 flex items-center justify-center z-10">
                            <div class="text-center px-4">
                              <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c3_title_sub">NEXUS STORE<br>2025 E-COMMERCE</h4>
@@ -257,14 +256,10 @@
                     </div>
                 </div>
 
-                <!-- Card 4: Xinsoo (Popup) -->
+                <!-- Card 4 -->
                 <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Xinsooo-a.lifeofbrooklyn/', 'XINSOO')" class="group project-card cursor-pointer block" data-keywords="xinsoo shin su-hyun artist portfolio">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-800 dark:border-neutral-800">
-                        <!-- Project Background Image -->
-                        <img src="https://img5.pic.in.th/file/secure-sv1/xinsoozzz.png" alt="Xinsoo Portfolio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-
                         <div class="absolute inset-0 flex items-center justify-center z-10">
                           <div class="text-center px-4">
                              <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c4_title_sub">XINSOO<br>SHIN SU-HYUN</h4>
@@ -278,14 +273,10 @@
                     </div>
                 </div>
 
-                <!-- Card 5: HBD Card (Popup) -->
+                <!-- Card 5 -->
                 <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/happroject-a.lifeofbrooklyn/', 'HBD CARD')" class="group project-card cursor-pointer block" data-keywords="hbd birthday card greetings">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <!-- Project Background Image -->
-                        <img src="https://i.postimg.cc/gJvCJtqg/hbdzzz.png" alt="HBD Card" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-
                         <div class="absolute inset-0 flex items-center justify-center z-10">
                            <div class="text-center px-4">
                              <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c5_title_sub">HBD CARD<br>DIGITAL GREETINGS</h4>
@@ -299,15 +290,10 @@
                     </div>
                 </div>
 
-                <!-- Card 6: KORE Brand-Website (Popup) -->
+                <!-- Card 6 -->
                 <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Brand-Website-a.lifeofbrooklyn/', 'KORE')" class="group project-card cursor-pointer block" data-keywords="KORE-Brand-Website">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-800 dark:border-neutral-800">
-                        <!-- Project Background Image -->
-                        <img src="https://img2.pic.in.th/pic/korebzzz.png" alt="KORE
-                        " class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-
                         <div class="absolute inset-0 flex items-center justify-center z-10">
                           <div class="text-center px-4">
                              <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c6_title_sub">KORE<br>Brand-Website</h4>
@@ -321,14 +307,10 @@
                     </div>
                 </div>
 
-                <!-- Card 7: Gym Discipline (Popup) -->
+                <!-- Card 7 -->
                 <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/GymDiscipline-a.lifeofbrooklyn/', 'Gym Discipline')" class="group project-card cursor-pointer block" data-keywords="Gym Discipline">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <!-- Project Background Image -->
-                        <img src="https://img2.pic.in.th/pic/lifezzz.png" alt="Joji Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <!-- Dark Overlay for Text Readability -->
                         <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        
                         <div class="absolute inset-0 flex items-center justify-center z-10">
                            <div class="text-center px-4">
                              <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c7_title_sub">Gym<br>Discipline</h4>
@@ -342,14 +324,10 @@
                     </div>
                 </div>
 
-                <!-- Card 0: GET IN TOUCH (External Link) -->
+                <!-- Card 0: GET IN TOUCH -->
                 <a href="https://github.com/alifeofbrooklyn" target="_blank" class="group project-card cursor-pointer block" data-keywords="contact email touch">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <!-- Project Background Image -->
-                        <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=2071&auto=format&fit=crop" alt="Contact" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-
                         <div class="absolute inset-0 flex items-center justify-center z-10">
                             <div class="text-center px-4">
                              <i data-lucide="mail" class="text-white mx-auto mb-2 w-12 h-12"></i>
@@ -371,7 +349,7 @@
             <h2 class="text-2xl md:text-3xl font-black uppercase mb-8 tracking-tight text-black dark:text-white" data-i18n="services.title">
                 SERVICES
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Service 1 -->
                 <div class="p-6 bg-gray-50 dark:bg-neutral-900 border border-transparent hover:border-black dark:hover:border-white transition-colors duration-300">
                     <i data-lucide="monitor" class="w-10 h-10 mb-4 text-black dark:text-white"></i>
@@ -384,12 +362,6 @@
                     <h4 class="font-bold text-lg mb-2 text-black dark:text-white tracking-wide" data-i18n="services.s2_title">UI/UX DESIGN</h4>
                     <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="services.s2_desc">Intuitive and beautiful user interfaces designed for optimal user experience and conversion.</p>
                 </div>
-                <!-- Service 3 -->
-                <div class="p-6 bg-gray-50 dark:bg-neutral-900 border border-transparent hover:border-black dark:hover:border-white transition-colors duration-300">
-                    <i data-lucide="smartphone" class="w-10 h-10 mb-4 text-black dark:text-white"></i>
-                    <h4 class="font-bold text-lg mb-2 text-black dark:text-white tracking-wide" data-i18n="services.s3_title">MOBILE APPS</h4>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="services.s3_desc">Cross-platform mobile applications for iOS and Android that connect you with your audience anywhere.</p>
-                </div>
             </div>
         </section>
 
@@ -398,7 +370,7 @@
     <!-- FOOTER -->
     <footer class="bg-white dark:bg-black border-t border-gray-200 dark:border-neutral-800 pt-16 pb-8 text-gray-600 dark:text-gray-400 transition-colors duration-300">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
                 <!-- Column 1 -->
                 <div>
                     <h5 class="font-bold text-sm mb-4 text-black dark:text-white" data-i18n="footer.help">HELP</h5>
@@ -409,16 +381,6 @@
 
                 <!-- Column 2 -->
                 <div>
-                    <h5 class="font-bold text-sm mb-4 text-black dark:text-white" data-i18n="footer.myAccount">MY ACCOUNT</h5>
-                    <ul class="space-y-2 text-sm">
-                        <!-- Trigger Register Modal -->
-                        <li><a href="javascript:void(0)" onclick="openRegisterModal('login')" class="hover:underline transition-colors hover:text-black dark:hover:text-white">Login</a></li>
-                        <li><a href="javascript:void(0)" onclick="openRegisterModal('register')" class="hover:underline transition-colors hover:text-black dark:hover:text-white">Register</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3 -->
-                <div>
                     <h5 class="font-bold text-sm mb-4 text-black dark:text-white" data-i18n="footer.pages">PAGES</h5>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.projects">Projects</a></li>
@@ -427,7 +389,7 @@
                     </ul>
                 </div>
 
-                <!-- Column 4 -->
+                <!-- Column 3 (SOCIALS - แก้ไขแล้วเหลือแค่ GitHub, LinkedIn, Discord) -->
                 <div>
                     <h5 class="font-bold text-sm mb-4 text-black dark:text-white" data-i18n="footer.socials">SOCIALS</h5>
                     <div class="flex flex-wrap gap-4 text-black dark:text-white">
@@ -440,18 +402,6 @@
                         <!-- LinkedIn -->
                         <a href="http://www.linkedin.com/in/alifeofbrooklyn" target="_blank" title="LinkedIn" class="transition-colors hover:text-gray-600 dark:hover:text-gray-400">
                             <i data-lucide="linkedin" class="w-5 h-5"></i>
-                        </a>
-
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/a.lifeofbrooklyn" target="_blank" title="Instagram" class="transition-colors hover:text-gray-600 dark:hover:text-gray-400">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-
-                        <!-- X / Twitter -->
-                        <a href="https://x.com/MERLiN50042176" target="_blank" title="X (Formerly Twitter)" class="transition-colors hover:text-gray-600 dark:hover:text-gray-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
-                            </svg>
                         </a>
 
                         <!-- Discord -->
@@ -479,94 +429,6 @@
         </div>
     </footer>
 
-    <!-- ABOUT ME MODAL -->
-    <div id="about-modal" class="hidden fixed inset-0 z-[70] bg-white dark:bg-black overflow-y-auto animate-fade-in">
-        <!-- Close Button -->
-        <button onclick="closeAboutModal()" class="absolute top-6 right-6 p-2 hover:bg-gray-100 dark:hover:bg-neutral-900 rounded-full transition-colors z-10">
-            <i data-lucide="x" class="w-6 h-6 text-black dark:text-white"></i>
-        </button>
-
-        <div class="min-h-screen flex flex-col justify-center p-6 sm:p-12 md:p-24 animate-slide-up">
-            <div class="max-w-6xl mx-auto w-full">
-                <!-- Title -->
-                <h2 class="text-3xl md:text-5xl font-black uppercase mb-2 tracking-tight text-black dark:text-white" data-i18n="about.title">ABOUT ME</h2>
-                <p class="text-lg text-gray-500 uppercase tracking-widest mb-12 font-bold" data-i18n="about.subtitle1">DRIVEN BY PASSION</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-                    
-                    <!-- Image Column (New) - Takes up 5 columns on desktop -->
-                    <div class="md:col-span-5 relative">
-                        <div class="aspect-[3/4] w-full overflow-hidden bg-gray-100 dark:bg-neutral-900">
-                            <!-- Updated Image Source to the one provided -->
-                            <img src="https://img5.pic.in.th/file/secure-sv1/MEf7896bc03a8cb93e.png" 
-                                 alt="Profile" 
-                                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
-                        </div>
-                        <!-- Decorative Element -->
-                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-black dark:bg-white z-[-1]"></div>
-                    </div>
-
-                    <!-- Content Column - Takes up 7 columns on desktop -->
-                    <div class="md:col-span-7 space-y-10">
-                        <!-- Text Content -->
-                        <div class="space-y-6">
-                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg font-light" data-i18n="about.text1">
-                                We are a collective of digital natives, obsessed with performance and sleek design. Our mission is to bridge the gap between imagination and reality through clean code and stunning visuals. We don't just build websites; we build digital legacies.
-                            </p>
-                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg font-light" data-i18n="about.text2">
-                                To be the catalyst for your digital evolution. We believe in conditioning your brand for the digital age, ensuring that every pixel serves a purpose and every interaction feels seamless. Progress is not just a goal; it's our standard.
-                            </p>
-                        </div>
-
-                        <!-- Skills / Stats Section -->
-                        <div class="bg-gray-50 dark:bg-neutral-900 p-8 border border-gray-100 dark:border-neutral-800">
-                            <h3 class="font-bold text-xl mb-6 text-black dark:text-white uppercase tracking-wider">SKILLS & EXPERTISE</h3>
-                            
-                            <div class="space-y-5">
-                                <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-bold text-xs uppercase tracking-wide text-gray-700 dark:text-gray-300">Frontend Development</span>
-                                        <span class="text-xs font-bold text-gray-500">95%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 dark:bg-neutral-800 h-1.5">
-                                        <div class="bg-black dark:bg-white h-1.5 w-[95%]"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-bold text-xs uppercase tracking-wide text-gray-700 dark:text-gray-300">UI/UX Design</span>
-                                        <span class="text-xs font-bold text-gray-500">85%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 dark:bg-neutral-800 h-1.5">
-                                        <div class="bg-black dark:bg-white h-1.5 w-[85%]"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between mb-2">
-                                        <span class="font-bold text-xs uppercase tracking-wide text-gray-700 dark:text-gray-300">Backend Systems</span>
-                                        <span class="text-xs font-bold text-gray-500">70%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 dark:bg-neutral-800 h-1.5">
-                                        <div class="bg-black dark:bg-white h-1.5 w-[70%]"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-neutral-800">
-                                <h4 class="font-bold text-xs mb-4 text-gray-500 uppercase tracking-widest">Tools I Use</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-white dark:bg-black border border-gray-200 dark:border-neutral-700 text-xs font-bold uppercase text-black dark:text-white">React</span>
-                                    <span class="px-3 py-1 bg-white dark:bg-black border border-gray-200 dark:border-neutral-700 text-xs font-bold uppercase text-black dark:text-white">Tailwind</span>
-                                    <span class="px-3 py-1 bg-white dark:bg-black border border-gray-200 dark:border-neutral-700 text-xs font-bold uppercase text-black dark:text-white">Figma</span>
-                                    <span class="px-3 py-1 bg-white dark:bg-black border border-gray-200 dark:border-neutral-700 text-xs font-bold uppercase text-black dark:text-white">Node.js</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- FAQ MODAL -->
     <div id="faq-modal" class="hidden fixed inset-0 z-[70] bg-white dark:bg-black overflow-y-auto animate-fade-in">
@@ -582,20 +444,20 @@
                 <div class="space-y-8">
                     <!-- FAQ Item 1 -->
                     <div class="border-b border-gray-200 dark:border-neutral-800 pb-6">
-                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white" data-i18n="faq.q1">Do you accept freelance projects?</h3>
-                        <p class="text-gray-600 dark:text-gray-400" data-i18n="faq.a1">Yes, I am currently available for freelance work. Please contact me via the form or social media to discuss your project.</p>
+                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white" data-i18n="faq.q1">Are you currently looking for an internship?</h3>
+                        <p class="text-gray-600 dark:text-gray-400" data-i18n="faq.a1">Yes! I am a final-year student actively seeking a Web/Front-End Developer internship to gain real-world experience and contribute to a professional team.</p>
                     </div>
                     
                     <!-- FAQ Item 2 -->
                     <div class="border-b border-gray-200 dark:border-neutral-800 pb-6">
-                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white" data-i18n="faq.q2">What is your tech stack?</h3>
-                        <p class="text-gray-600 dark:text-gray-400" data-i18n="faq.a2">I specialize in React, Node.js, Tailwind CSS, and Python. I am also proficient in using Figma for UI/UX design.</p>
+                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white" data-i18n="faq.q2">What are your core technical skills?</h3>
+                        <p class="text-gray-600 dark:text-gray-400" data-i18n="faq.a2">My main tech stack includes HTML, CSS, JavaScript, React.js, Next.js, and Tailwind CSS. I also have basic knowledge of backend tools like Node.js, Express, and MySQL.</p>
                     </div>
 
                     <!-- FAQ Item 3 -->
                     <div class="border-b border-gray-200 dark:border-neutral-800 pb-6">
-                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white" data-i18n="faq.q3">How can I contact you?</h3>
-                        <p class="text-gray-600 dark:text-gray-400" data-i18n="faq.a3">You can reach me via the 'Contact Me' card in the portfolio section, or through my social media links in the footer.</p>
+                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white" data-i18n="faq.q3">Are you open to learning new tools and frameworks?</h3>
+                        <p class="text-gray-600 dark:text-gray-400" data-i18n="faq.a3">Absolutely. I am a fast learner with an agile mindset. I am highly adaptable and eager to learn any new technologies, tools, or workflows that your company uses.</p>
                     </div>
                 </div>
                 
@@ -603,93 +465,6 @@
                     <button onclick="closeFAQModal()" class="font-bold underline text-black dark:text-white uppercase">Back to Portfolio</button>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- AUTH MODAL (Register / Login) -->
-    <div id="auth-modal" class="hidden fixed inset-0 z-[60] bg-white dark:bg-black overflow-y-auto animate-fade-in">
-        <!-- Close Button -->
-        <button onclick="closeRegisterModal()" class="absolute top-6 right-6 p-2 hover:bg-gray-100 dark:hover:bg-neutral-900 rounded-full transition-colors">
-            <i data-lucide="x" class="w-6 h-6 text-black dark:text-white"></i>
-        </button>
-
-        <!-- Modal Content -->
-        <div class="min-h-screen flex flex-col items-center justify-center p-6 animate-slide-up">
-            
-            <!-- Logo Icon -->
-            <div class="mb-8">
-                 <img src="https://img2.pic.in.th/pic/SAD-GUY-LOGO.png" alt="SAD GUY LOGO" class="h-16 md:h-20 dark:invert transition-all duration-300">
-            </div>
-
-            <!-- Header -->
-            <h2 id="auth-title" class="text-2xl font-black uppercase tracking-tight mb-2 text-black dark:text-white">PORTFOLIO SIGNUP</h2>
-            <p id="auth-desc" class="text-gray-500 text-sm mb-8 text-center max-w-sm">One account, across all projects, just to make things a little easier.</p>
-
-            <!-- Form -->
-            <form class="w-full max-w-md space-y-4">
-                
-                <!-- Register Fields -->
-                <div id="register-fields">
-                    <div class="mb-4">
-                        <label class="block text-xs font-bold uppercase mb-1 text-gray-500">First Name</label>
-                        <input type="text" class="w-full p-3 border border-gray-300 dark:border-neutral-700 rounded bg-white dark:bg-neutral-900 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-xs font-bold uppercase mb-1 text-gray-500">Last Name</label>
-                        <input type="text" class="w-full p-3 border border-gray-300 dark:border-neutral-700 rounded bg-white dark:bg-neutral-900 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-xs font-bold uppercase mb-1 text-gray-500">Date of Birth</label>
-                        <!-- Changed type to text initially to hide mm/dd/yyyy, changes to date on focus -->
-                        <input 
-                            type="text" 
-                            onfocus="(this.type='date')" 
-                            onblur="if(!this.value)this.type='text'"
-                            class="w-full p-3 border border-gray-300 dark:border-neutral-700 rounded bg-white dark:bg-neutral-900 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors min-h-[50px]"
-                        >
-                    </div>
-                </div>
-
-                <!-- Common Fields -->
-                <div class="mb-4">
-                    <label class="block text-xs font-bold uppercase mb-1 text-gray-500">Email Address <span class="text-red-500">*</span></label>
-                    <input type="email" required class="w-full p-3 border border-gray-300 dark:border-neutral-700 rounded bg-white dark:bg-neutral-900 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors">
-                </div>
-                
-                <div class="mb-2 relative">
-                    <label class="block text-xs font-bold uppercase mb-1 text-gray-500">Password <span class="text-red-500">*</span></label>
-                    <input type="password" required class="w-full p-3 border border-gray-300 dark:border-neutral-700 rounded bg-white dark:bg-neutral-900 text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors">
-                    <button type="button" class="absolute right-3 top-8 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
-                        <i data-lucide="eye" class="w-5 h-5"></i>
-                    </button>
-                </div>
-
-                <!-- Forgot Password (Visible only in Login mode) -->
-                <div id="forgot-password-container" class="hidden flex justify-end mb-4">
-                    <a href="#" class="text-xs text-gray-500 underline hover:text-black dark:hover:text-white">Forgot password?</a>
-                </div>
-
-                <!-- Register Checkbox -->
-                <div id="register-checkbox" class="flex items-start mb-6">
-                    <input type="checkbox" id="policy" class="mt-1 mr-3 w-4 h-4 accent-black dark:accent-white">
-                    <label for="policy" class="text-xs text-gray-500 leading-relaxed">
-                        Tick here to receive emails about new projects, updates, and more. See our <a href="#" class="underline font-bold text-black dark:text-white">Privacy Policy</a>.
-                    </label>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" id="auth-submit-btn" class="w-full bg-black dark:bg-white text-white dark:text-black font-black uppercase py-4 rounded-full hover:opacity-80 transition-opacity">
-                    CREATE ACCOUNT
-                </button>
-
-            </form>
-
-            <!-- Toggle Mode -->
-            <div class="mt-6 text-sm">
-                <span class="text-gray-500" id="auth-switch-text">Already have an account?</span>
-                <button onclick="toggleAuthMode()" id="auth-switch-btn" class="font-bold underline text-black dark:text-white ml-1">Log in</button>
-            </div>
-
         </div>
     </div>
 
@@ -725,41 +500,18 @@
                 "nav.about": "ABOUT ME",
                 "nav.services": "SERVICES",
                 "search.placeholder": "Search projects...",
-                "hero.title": "UI/UX DESIGN & WEB DEVELOPMENT",
-                "hero.p1": "Digital experiences designed to help your brand become its personal best. Because when it comes to performing at your max in the digital world, there should be no obstacles – least of all your website.",
-                "hero.p2": "Functional and beautiful, I create user interfaces you'll love to use. Since 2025, I've designed and developed the web applications I want to see in the world, because innovation and user experience are what I know best.",
-                "projects.title": "PROJECTS BUILT IN THE CODE EDITOR",
-                "projects.p1": "My legacy was built in the code editor. This portfolio was founded with a love for coding and that passion continues into all my projects today. You'll find the latest innovation in web technology and design to help you perform at your best and recover in style.",
-                "projects.p2_intro": "My",
-                "projects.p2_fe": "Frontend Work",
-                "projects.p2_text1": "features pixel-perfect",
-                "projects.p2_react": "React components",
-                "projects.p2_text2": "and",
-                "projects.p2_tail": "Tailwind CSS layouts",
-                "projects.p2_text3": ". Whilst my",
-                "projects.p2_be": "Backend Systems",
-                "projects.p2_text4": "are designed for a range of scales and feature sophisticated API integrations.",
-                "projects.p3_intro": "An obsession with optimization is what started this career. My",
-                "projects.p3_apps": "Web Apps",
-                "projects.p3_text1": "and",
-                "projects.p3_mobile": "Mobile Interfaces",
-                "projects.p3_text2": "feature classic styles, with modern cuts and innovative frameworks to help you raise the bar.",
+                "hero.title": "Web Developer",
+                "hero.p1": "Final-year Information Technology student seeking a Web / Front-End Developer Internship. Experienced in building responsive, user-centric web applications using React, Next.js, and Tailwind CSS. Eager to apply clean code principles and UI/UX design to contribute to real-world software projects and learn within a collaborative team environment.",
+                "projects.title": "Career Objective",
+                "projects.p1": "An ambitious and detail-oriented Junior Front-End Developer with a strong foundation in modern web technologies including React.js, Next.js, and Tailwind CSS. Passionate about bridging the gap between sophisticated UI/UX design and high-performance, clean code. Dedicated to continuous learning, building responsive web applications that deliver seamless user experiences, and mastering full-stack capabilities—including backend integration and database management. Eager to contribute technical creativity, problem-solving skills, and a strong collaborative mindset to a dynamic development team while driving meaningful digital solutions.",
                 
-                "about.title": "ABOUT ME",
-                "about.subtitle1": "DRIVEN BY PASSION",
-                "about.text1": "I am a digital creator obsessed with performance and sleek design. My mission is to bridge the gap between imagination and reality through clean code and stunning visuals. I don't just build websites; I build digital legacies.",
-                "about.subtitle2": "MY VISION",
-                "about.text2": "To be the catalyst for your digital evolution. I believe in conditioning your brand for the digital age, ensuring that every pixel serves a purpose and every interaction feels seamless. Progress is not just a goal; it's my standard.",
-
                 "services.title": "SERVICES",
                 "services.s1_title": "WEB DEVELOPMENT",
                 "services.s1_desc": "High-performance websites built with modern technologies like React, Vue, and Tailwind CSS.",
                 "services.s2_title": "UI/UX DESIGN",
                 "services.s2_desc": "Intuitive and beautiful user interfaces designed for optimal user experience and conversion.",
-                "services.s3_title": "MOBILE APPS",
-                "services.s3_desc": "Cross-platform mobile applications for iOS and Android that connect you with your audience anywhere.",
 
-                "cards.sectionTitle": "MORE ABOUT MY WORK",
+                "cards.sectionTitle": "My Projects",
                 "cards.c1_title_sub": "FOR JOJI<br>DISCOVER YOUR SOUND",
                 "cards.c1_stack": "Web Experience",
                 "cards.c1_tag": "CASE STUDY",
@@ -800,67 +552,40 @@
                 "cards.c0_desc": "Let's build something great together.",
 
                 "footer.help": "HELP",
-                "footer.myAccount": "MY ACCOUNT",
                 "footer.pages": "PAGES",
                 "footer.socials": "SOCIALS",
                 "footer.rights": "All Rights Reserved",
                 "footer.socialDesc": "The Portfolio community is devoted to unlocking potential through conditioning and the things we do today to prepare for tomorrow.",
                 "footer.links.faq": "FAQ",
-                "footer.links.delivery": "Delivery Information",
-                "footer.links.returns": "Returns Policy",
                 "footer.links.projects": "Projects",
                 "footer.links.resume": "Resume",
                 "footer.links.blog": "Blog",
-                "footer.links.about": "About Me",
 
                 "faq.title": "FREQUENTLY ASKED QUESTIONS",
-                "faq.q1": "Do you accept freelance projects?",
-                "faq.a1": "Yes, I am currently available for freelance work. Please contact me via the form or social media to discuss your project.",
-                "faq.q2": "What is your tech stack?",
-                "faq.a2": "I specialize in React, Node.js, Tailwind CSS, and Python. I am also proficient in using Figma for UI/UX design.",
-                "faq.q3": "How can I contact you?",
-                "faq.a3": "You can reach me via the 'Contact Me' card in the portfolio section, or through my social media links in the footer."
+                "faq.q1": "Are you currently looking for an internship?",
+                "faq.a1": "Yes! I am a final-year student actively seeking a Web/Front-End Developer internship to gain real-world experience and contribute to a professional team.",
+                "faq.q2": "What are your core technical skills?",
+                "faq.a2": "My main tech stack includes HTML, CSS, JavaScript, React.js, Next.js, and Tailwind CSS. I also have basic knowledge of backend tools like Node.js, Express, and MySQL.",
+                "faq.q3": "Are you open to learning new tools and frameworks?",
+                "faq.a3": "Absolutely. I am a fast learner with an agile mindset. I am highly adaptable and eager to learn any new technologies, tools, or workflows that your company uses."
             },
             th: {
                 "nav.work": "ผลงาน",
                 "nav.about": "เกี่ยวกับฉัน",
                 "nav.services": "บริการ",
                 "search.placeholder": "ค้นหาโปรเจกต์...",
-                "hero.title": "การออกแบบ UI/UX และการพัฒนาเว็บไซต์",
-                "hero.p1": "ประสบการณ์ดิจิทัลที่ออกแบบมาเพื่อช่วยให้แบรนด์ของคุณก้าวไปสู่จุดที่ดีที่สุด เพราะเมื่อพูดถึงการแสดงศักยภาพสูงสุดในโลกดิจิทัล ไม่ควรมีอุปสรรคใดๆ มาขวางกั้น โดยเฉพาะเว็บไซต์ของคุณ",
-                "hero.p2": "ใช้งานได้จริงและสวยงาม ผมสร้างสรรค์หน้าจอผู้ใช้ที่คุณจะหลงรัก ตั้งแต่ปี 2025 ผมได้ออกแบบและพัฒนาเว็บแอปพลิเคชันที่ผมอยากเห็นในโลกนี้ เพราะนวัตกรรมและประสบการณ์ผู้ใช้คือสิ่งที่ผมถนัดที่สุด",
-                "projects.title": "โปรเจกต์ที่สร้างขึ้นใน CODE EDITOR",
-                "projects.p1": "ตำนานของผมสร้างขึ้นใน Code Editor พอร์ตโฟลิโอนี้ก่อตั้งขึ้นด้วยความรักในการเขียนโค้ด และความหลงใหลนั้นยังคงอยู่ในทุกโปรเจกต์ของผมในวันนี้ คุณจะได้พบกับนวัตกรรมล่าสุดในเทคโนโลยีเว็บและการออกแบบ",
-                "projects.p2_intro": "งานด้าน",
-                "projects.p2_fe": "Frontend",
-                "projects.p2_text1": "ของผมเน้นความสมบูรณ์แบบด้วย",
-                "projects.p2_react": "React components",
-                "projects.p2_text2": "และ",
-                "projects.p2_tail": "Tailwind CSS layouts",
-                "projects.p2_text3": "ในขณะที่",
-                "projects.p2_be": "Backend Systems",
-                "projects.p2_text4": "ถูกออกแบบมาเพื่อรองรับทุกขนาด พร้อมการเชื่อมต่อ API ที่ซับซ้อนและการจัดการฐานข้อมูลที่ชาญฉลาด",
-                "projects.p3_intro": "ความหลงใหลในการปรับปรุงประสิทธิภาพคือจุดเริ่มต้นของอาชีพนี้",
-                "projects.p3_apps": "Web Apps",
-                "projects.p3_text1": "และ",
-                "projects.p3_mobile": "Mobile Interfaces",
-                "projects.p3_text2": "ของผมมีสไตล์คลาสสิก แต่แฝงด้วยความทันสมัยและเฟรมเวิร์กนวัตกรรมใหม่ๆ",
+                "hero.title": "นักพัฒนาเว็บไซต์",
+                "hero.p1": "นักศึกษาชั้นปีสุดท้ายสาขาเทคโนโลยีสารสนเทศ ที่กำลังมองหาโอกาสฝึกงานในตำแหน่ง Web หรือ Front-End Developer มีประสบการณ์ในการพัฒนาเว็บแอปพลิเคชันที่รองรับทุกหน้าจอและเน้นผู้ใช้งานเป็นศูนย์กลาง โดยใช้ React, Next.js และ Tailwind CSS มีความกระตือรือร้นที่จะนำหลักการเขียนโค้ดที่สะอาด (Clean Code) และการออกแบบ UI/UX ไปประยุกต์ใช้เพื่อร่วมสร้างสรรค์โปรเจกต์ซอฟต์แวร์จริง",
+                "projects.title": "จุดมุ่งหมายในการทำงาน",
+                "projects.p1": "นักพัฒนาเว็บไซต์ส่วนหน้าระดับเริ่มต้นผู้มีความมุ่งมั่นและใส่ใจในรายละเอียด มีพื้นฐานที่แข็งแกร่งในเทคโนโลยีเว็บสมัยใหม่ รวมถึง React.js, Next.js และ Tailwind CSS มีความหลงใหลในการเชื่อมช่องว่างระหว่างการออกแบบ UI/UX ที่ซับซ้อนเข้ากับโค้ดที่มีประสิทธิภาพสูง มุ่งมั่นที่จะเรียนรู้อย่างต่อเนื่อง พร้อมทำงานร่วมกับทีมที่มีประสบการณ์ เพื่อสร้างสรรค์ผลงานดิจิทัลโซลูชันที่มีคุณค่าและตอบโจทย์ผู้ใช้งาน",
                 
-                "about.title": "เกี่ยวกับฉัน",
-                "about.subtitle1": "ขับเคลื่อนด้วยความหลงใหล",
-                "about.text1": "ผมคือนักสร้างสรรค์ดิจิทัลที่หลงใหลในประสิทธิภาพและการออกแบบที่โฉบเฉี่ยว ภารกิจของผมคือการเชื่อมช่องว่างระหว่างจินตนาการและความเป็นจริงผ่านโค้ดที่สะอาดตาและภาพที่สวยงาม ผมไม่ได้แค่สร้างเว็บไซต์ แต่ผมสร้างตำนานดิจิทัล",
-                "about.subtitle2": "วิสัยทัศน์ของผม",
-                "about.text2": "เพื่อเป็นตัวเร่งให้เกิดวิวัฒนาการดิจิทัลของคุณ ผมเชื่อในการเตรียมความพร้อมแบรนด์ของคุณสำหรับยุคดิจิทัล เพื่อให้มั่นใจว่าทุกพิกเซลมีจุดมุ่งหมายและการโต้ตอบทุกครั้งลื่นไหล ความก้าวหน้าไม่ใช่แค่เป้าหมาย แต่เป็นมาตรฐานของผม",
-
-                "services.title": "บริการ",
+                "services.title": "ทักษะเพิ่มเติม",
                 "services.s1_title": "พัฒนาเว็บไซต์",
-                "services.s1_desc": "เว็บไซต์ประสิทธิภาพสูงที่สร้างด้วยเทคโนโลยีสมัยใหม่ เช่น React, Vue และ Tailwind CSS",
+                "services.s1_desc": "สร้างเว็บไซต์ประสิทธิภาพสูงด้วยเทคโนโลยีสมัยใหม่ เช่น React, Next.js และ Tailwind CSS",
                 "services.s2_title": "ออกแบบ UI/UX",
-                "services.s2_desc": "หน้าจอผู้ใช้ที่สวยงามและใช้งานง่าย ออกแบบมาเพื่อประสบการณ์ผู้ใช้ที่ดีที่สุด",
-                "services.s3_title": "แอปพลิเคชันมือถือ",
-                "services.s3_desc": "แอปพลิเคชันมือถือข้ามแพลตฟอร์มสำหรับ iOS และ Android เพื่อเชื่อมต่อคุณกับกลุ่มเป้าหมายได้ทุกที่",
+                "services.s2_desc": "เข้าใจหลักการออกแบบหน้าจอผู้ใช้ให้สวยงามและใช้งานง่าย เพื่อประสบการณ์ผู้ใช้ที่ดีที่สุด",
 
-                "cards.sectionTitle": "เพิ่มเติมเกี่ยวกับงานของผม",
+                "cards.sectionTitle": "ผลงานของผม",
                 "cards.c1_title_sub": "FOR JOJI<br>DISCOVER YOUR SOUND",
                 "cards.c1_stack": "Web Experience",
                 "cards.c1_tag": "กรณีศึกษา",
@@ -901,26 +626,22 @@
                 "cards.c0_desc": "มาสร้างสรรค์ผลงานที่ยอดเยี่ยมด้วยกัน",
 
                 "footer.help": "ช่วยเหลือ",
-                "footer.myAccount": "บัญชีของฉัน",
                 "footer.pages": "หน้าเว็บ",
                 "footer.socials": "โซเชียล",
                 "footer.rights": "สงวนลิขสิทธิ์",
                 "footer.socialDesc": "ชุมชน Portfolio นี้อุทิศตนเพื่อปลดล็อกศักยภาพผ่านการฝึกฝนและสิ่งที่เราทำในวันนี้เพื่อเตรียมพร้อมสำหรับวันพรุ่งนี้",
                 "footer.links.faq": "คำถามที่พบบ่อย",
-                "footer.links.delivery": "ข้อมูลการจัดส่ง",
-                "footer.links.returns": "นโยบายการคืนสินค้า",
                 "footer.links.projects": "โปรเจกต์",
                 "footer.links.resume": "เรซูเม่",
                 "footer.links.blog": "บทความ",
-                "footer.links.about": "เกี่ยวกับฉัน",
 
                 "faq.title": "คำถามที่พบบ่อย",
-                "faq.q1": "คุณรับงานฟรีแลนซ์หรือไม่?",
-                "faq.a1": "ใช่ครับ ผมเปิดรับงานฟรีแลนซ์อยู่ สามารถติดต่อผมผ่านแบบฟอร์มหรือโซเชียลมีเดียเพื่อพูดคุยรายละเอียดได้เลยครับ",
-                "faq.q2": "คุณใช้เทคโนโลยีอะไรบ้าง?",
-                "faq.a2": "ผมเชี่ยวชาญในการใช้ React, Node.js, Tailwind CSS และ Python นอกจากนี้ยังสามารถใช้ Figma ในการออกแบบ UI/UX ได้อย่างคล่องแคล่ว",
-                "faq.q3": "จะติดต่อคุณได้อย่างไร?",
-                "faq.a3": "คุณสามารถติดต่อผมได้ผ่านการ์ด 'ติดต่อฉัน' ในส่วนผลงาน หรือผ่านลิงก์โซเชียลมีเดียที่ด้านล่างสุดของหน้าเว็บครับ"
+                "faq.q1": "คุณกำลังมองหาโอกาสฝึกงานอยู่ใช่ไหม?",
+                "faq.a1": "ใช่ครับ! ผมกำลังศึกษาอยู่ชั้นปีสุดท้าย และกำลังมองหาที่ฝึกงานในตำแหน่ง Web Developer หรือ Front-End Developer เพื่อเก็บเกี่ยวประสบการณ์จริงและร่วมเป็นส่วนหนึ่งในทีมพัฒนาครับ",
+                "faq.q2": "คุณมีทักษะความเชี่ยวชาญด้านใดบ้าง?",
+                "faq.a2": "ผมถนัดการพัฒนาในฝั่ง Front-End เป็นหลัก โดยใช้ HTML, CSS, JavaScript, React.js, Next.js และ Tailwind CSS นอกจากนี้ยังมีความรู้พื้นฐานทางฝั่ง Backend เช่น Node.js, Express และ MySQL ด้วยครับ",
+                "faq.q3": "คุณพร้อมที่จะเรียนรู้เทคโนโลยีใหม่ๆ หรือไม่?",
+                "faq.a3": "แน่นอนครับ ผมเป็นคนที่เรียนรู้ได้เร็วและพร้อมเปิดรับสิ่งใหม่ๆ เสมอ ยินดีที่จะศึกษาเครื่องมือ เฟรมเวิร์ก หรือระบบการทำงานใดๆ ก็ตามที่บริษัทของคุณใช้งานอยู่ครับ"
             }
         };
 
@@ -929,7 +650,6 @@
         let isDarkMode = false;
         let isMenuOpen = false;
         let isSearchOpen = false;
-        let currentAuthMode = 'register'; // 'register' or 'login'
 
         // --- FUNCTIONS ---
 
@@ -1001,7 +721,6 @@
 
             if (isSearchOpen) {
                 container.classList.remove('w-8', 'border-transparent', 'bg-transparent');
-                // Updated: cleaner look without border, using light gray bg
                 container.classList.add('w-56', 'lg:w-64', 'bg-gray-100', 'dark:bg-neutral-800');
                 input.classList.remove('opacity-0');
                 closeBtn.classList.remove('hidden');
@@ -1057,73 +776,6 @@
             });
         }
 
-        // --- AUTH MODAL FUNCTIONS ---
-
-        function openRegisterModal(mode = 'register') {
-            const modal = document.getElementById('auth-modal');
-            modal.classList.remove('hidden');
-            document.body.classList.add('no-scroll'); // Prevent background scrolling
-            
-            // Set initial mode
-            currentAuthMode = mode;
-            updateAuthUI();
-        }
-
-        function closeRegisterModal() {
-            const modal = document.getElementById('auth-modal');
-            modal.classList.add('hidden');
-            document.body.classList.remove('no-scroll');
-        }
-
-        function toggleAuthMode() {
-            currentAuthMode = currentAuthMode === 'register' ? 'login' : 'register';
-            updateAuthUI();
-        }
-
-        function updateAuthUI() {
-            const title = document.getElementById('auth-title');
-            const desc = document.getElementById('auth-desc');
-            const submitBtn = document.getElementById('auth-submit-btn');
-            const switchText = document.getElementById('auth-switch-text');
-            const switchBtn = document.getElementById('auth-switch-btn');
-            const regFields = document.getElementById('register-fields');
-            const regCheckbox = document.getElementById('register-checkbox');
-            const forgotPwd = document.getElementById('forgot-password-container');
-
-            if (currentAuthMode === 'register') {
-                title.textContent = "PORTFOLIO SIGNUP";
-                desc.textContent = "One account, across all projects, just to make things a little easier.";
-                submitBtn.textContent = "CREATE ACCOUNT";
-                switchText.textContent = "Already have an account?";
-                switchBtn.textContent = "Log in";
-                regFields.classList.remove('hidden');
-                regCheckbox.classList.remove('hidden');
-                forgotPwd.classList.add('hidden');
-            } else {
-                title.textContent = "PORTFOLIO LOGIN";
-                desc.textContent = "Welcome back! Log in to access your dashboard.";
-                submitBtn.textContent = "LOG IN";
-                switchText.textContent = "New to Portfolio?";
-                switchBtn.textContent = "Create an account";
-                regFields.classList.add('hidden');
-                regCheckbox.classList.add('hidden');
-                forgotPwd.classList.remove('hidden');
-            }
-        }
-
-        // --- ABOUT MODAL FUNCTIONS ---
-        function openAboutModal() {
-            const modal = document.getElementById('about-modal');
-            modal.classList.remove('hidden');
-            document.body.classList.add('no-scroll');
-        }
-
-        function closeAboutModal() {
-            const modal = document.getElementById('about-modal');
-            modal.classList.add('hidden');
-            document.body.classList.remove('no-scroll');
-        }
-
         // --- FAQ MODAL FUNCTIONS ---
         function openFAQModal() {
             const modal = document.getElementById('faq-modal');
@@ -1138,7 +790,6 @@
         }
 
         // --- PROJECT PREVIEW MODAL FUNCTIONS ---
-
         function openProjectPreview(url, title) {
             const modal = document.getElementById('project-modal');
             const iframe = document.getElementById('project-iframe');
@@ -1169,7 +820,6 @@
         }
 
         // --- EVENT LISTENERS ---
-
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 20) {
@@ -1188,5 +838,4 @@
 
     </script>
 </body>
-
 </html>
