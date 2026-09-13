@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - a.lifeofbrooklyn</title>
+    <title>Yuenyong Khansanthia — Full-Stack Web Developer</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configure Tailwind Dark Mode -->
@@ -39,9 +39,60 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        :root {
+            --accent: #315efb;
+            --accent-soft: #eef2ff;
+            --surface: #f8f9fc;
+            --line: #e4e7ec;
+        }
+        body { font-family: 'Manrope', sans-serif; background: var(--surface); letter-spacing: -0.01em; }
+        .dark body { background: #09090b; }
+        ::selection { background: var(--accent); color: #fff; }
+        h1, h2, h3, h4, h5, h6, .font-black, .font-bold { letter-spacing: -0.035em; }
+        a { text-underline-offset: 0.22em; }
+        main a:not(.project-card), footer a { transition: color 0.2s ease, border-color 0.2s ease; }
+        main a:not(.project-card):hover, footer a:hover { color: var(--accent); }
+        .border-gray-200 { border-color: var(--line); }
+        .bg-gray-50 { background-color: #f4f6fa; }
+        .project-card { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+        .project-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(22, 35, 70, 0.10); }
+        .certificate-image { border-color: var(--line); border-radius: 0.35rem; }
+        #navbar { box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06); }
+        #lang-btn { border-color: var(--accent); color: var(--accent); }
+        #lang-btn:hover { background: var(--accent); color: white; }
+        .project-tech span { border-radius: 999px; }
+        .dark .bg-gray-50 { background-color: #151518; }
+        .dark .border-gray-200 { border-color: #27272a; }
+        .dark .project-card:hover { box-shadow: 0 14px 30px rgba(0, 0, 0, 0.30); }
+        .hero-section { position: relative; isolation: isolate; overflow: hidden; padding: 2.75rem 3rem 2.5rem; border: 1px solid var(--line); border-radius: 1.25rem; background: radial-gradient(circle at 88% 8%, rgba(49,94,251,.16), transparent 31%), linear-gradient(135deg, #ffffff 0%, #f4f6ff 100%); box-shadow: 0 18px 45px rgba(22, 35, 70, .08); }
+        .hero-section::before { content: ""; position: absolute; width: 18rem; height: 18rem; right: -7rem; bottom: -10rem; border: 1px solid rgba(49,94,251,.22); border-radius: 50%; box-shadow: 0 0 0 2rem rgba(49,94,251,.05), 0 0 0 4rem rgba(49,94,251,.035); z-index: -1; }
+        .hero-section::after { content: ""; position: absolute; top: 1.25rem; right: 1.5rem; width: .55rem; height: .55rem; border-radius: 999px; background: var(--accent); box-shadow: 1.1rem 0 0 rgba(49,94,251,.35), 2.2rem 0 0 rgba(49,94,251,.15); }
+        .hero-kicker { display: none; }
+        .hero-section h1 { font-size: clamp(1.35rem, 3vw, 2.15rem); line-height: 1; letter-spacing: .08em; }
+        .hero-section h2 { max-width: 52rem; font-size: clamp(2.3rem, 6vw, 5.25rem); line-height: .92; letter-spacing: -.065em; }
+        .hero-section p[data-i18n="hero.p1"] { max-width: 46rem; font-size: .98rem; }
+        .hero-contact a { display: inline-flex; align-items: center; min-height: 2rem; padding: .35rem .75rem; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.68); }
+        .dark .hero-section { border-color: #27272a; background: radial-gradient(circle at 88% 8%, rgba(49,94,251,.22), transparent 31%), linear-gradient(135deg, #111114 0%, #171a2b 100%); box-shadow: 0 18px 45px rgba(0,0,0,.28); }
+        .dark .hero-kicker, .dark .hero-contact a { background: rgba(24,24,27,.78); border-color: #3f3f46; }
+        @media (max-width: 767px) { .hero-section { padding: 2rem 1.15rem 1.75rem; border-radius: 1rem; } .hero-section::after { right: 1rem; } .hero-section h2 { font-size: clamp(2.25rem, 13vw, 3.6rem); } .hero-contact { gap: .5rem; } }
+        .skills-panel { position: relative; overflow: hidden; border-radius: 1rem; box-shadow: 0 12px 28px rgba(22, 35, 70, .06); }
+        .skills-panel::before { content: ""; position: absolute; width: 13rem; height: 13rem; right: -5rem; top: -5rem; border-radius: 50%; border: 1px solid rgba(49,94,251,.16); box-shadow: 0 0 0 1.5rem rgba(49,94,251,.04); pointer-events: none; }
+        .skill-row { position: relative; padding: .8rem 1rem; border: 1px solid transparent; border-radius: .75rem; transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
+        .skill-row:hover { transform: translateX(.25rem); background: var(--accent-soft); border-color: rgba(49,94,251,.16); }
+        .skill-row { display: flex; align-items: flex-start; gap: .75rem; }
+        .skill-icon { flex: 0 0 auto; width: 2rem; height: 2rem; padding: .42rem; border-radius: .65rem; color: var(--accent); background: rgba(49,94,251,.1); transition: transform .2s ease, background-color .2s ease, color .2s ease; }
+        .skill-row:hover .skill-icon { transform: rotate(-8deg) scale(1.08); color: #fff; background: var(--accent); }
+        .skill-copy { padding-top: .18rem; }
+        .skills-panel h3 { position: relative; display: flex; align-items: center; gap: .7rem; }
+        .skills-panel h3::before { content: ""; width: .3rem; height: 1.4rem; border-radius: 999px; background: var(--accent); }
+        .dark .skill-row:hover { background: rgba(49,94,251,.12); border-color: rgba(129,140,248,.25); }
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); }
+            .reveal.is-visible { opacity: 1; transform: translateY(0); }
+            .reveal-stagger > * { transition-delay: calc(var(--reveal-index, 0) * 70ms); }
+        }
         /* Smooth transition for search width */
         #search-container {
             transition: width 0.3s ease-in-out, background-color 0.3s;
@@ -49,6 +100,62 @@
         /* Hide scrollbar for modal */
         .no-scroll {
             overflow: hidden;
+        }
+        .project-visual {
+            background: linear-gradient(135deg, var(--visual-start), var(--visual-end));
+        }
+        .project-visual::after {
+            content: "";
+            position: absolute;
+            inset: 14px;
+            border: 1px solid rgba(255,255,255,.35);
+            pointer-events: none;
+        }
+        .project-tech { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.65rem; }
+        .project-tech span { border: 1px solid currentColor; padding: 0.2rem 0.45rem; font-size: 0.65rem; line-height: 1; font-weight: 700; letter-spacing: 0.04em; opacity: 0.78; }
+        .project-features { margin-top: 0.65rem; padding-left: 1rem; list-style: disc; }
+        .project-features li { margin-top: 0.25rem; }
+        .certificate-image { display: block; width: 100%; height: auto; object-fit: contain; border: 1px solid #e5e7eb; }
+        .certificate-placeholder { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; text-align: center; border: 1px dashed #9ca3af; background: repeating-linear-gradient(135deg, #f9fafb, #f9fafb 10px, #f3f4f6 10px, #f3f4f6 20px); }
+        .dark .certificate-placeholder { border-color: #525252; background: repeating-linear-gradient(135deg, #171717, #171717 10px, #262626 10px, #262626 20px); }
+        /* Compact layout: show more content at once while keeping the layout responsive. */
+        html { font-size: 90%; }
+        body { font-size: 0.95rem; }
+        header#navbar { padding-top: 0.85rem; padding-bottom: 0.85rem; }
+        header#navbar > div { max-width: 76rem; }
+        main.container { max-width: 72rem; padding-top: 2rem; padding-bottom: 3rem; }
+        main.container > section { margin-bottom: 3rem; }
+        main.container section { scroll-margin-top: 5rem; }
+        main.container h1 { line-height: 0.95; }
+        main.container h2 { line-height: 1.05; }
+        main.container .grid { gap: 1rem; }
+        main.container .p-6 { padding: 1.15rem; }
+        main.container .p-8 { padding: 1.35rem; }
+        main.container .mb-20 { margin-bottom: 3rem; }
+        main.container .pt-16 { padding-top: 2.75rem; }
+        main.container .mb-12 { margin-bottom: 2rem; }
+        main.container .mb-8 { margin-bottom: 1.25rem; }
+        main.container .mt-12 { margin-top: 2rem; }
+        .certificate-image { max-height: 34rem; }
+        @media (max-width: 767px) {
+            html { font-size: 88%; }
+            main.container { padding-left: 1rem; padding-right: 1rem; padding-top: 1.25rem; }
+            header#navbar > div { padding-left: 1rem; padding-right: 1rem; }
+            main.container .p-6 { padding: 0.9rem; }
+            .certificate-image { max-height: none; }
+        }
+        .project-card:focus-visible,
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #737373;
+            outline-offset: 4px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
@@ -59,7 +166,7 @@
         <div class="container mx-auto px-6 flex items-center justify-between">
             
             <!-- Mobile Menu Button -->
-            <button class="lg:hidden p-2" onclick="toggleMenu()">
+            <button class="lg:hidden p-2" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
                 <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
             </button>
 
@@ -68,16 +175,17 @@
                 <!-- กดแล้วเลื่อนไปที่ส่วน Web Developer -->
                 <a href="#about" class="hover:text-black dark:hover:text-white transition-colors" data-i18n="nav.about">ABOUT ME</a>
                 <a href="#work" class="hover:text-black dark:hover:text-white transition-colors" data-i18n="nav.work">WORK</a>
+                <a href="#certifications" class="hover:text-black dark:hover:text-white transition-colors" data-i18n="nav.certifications">CERTIFICATIONS</a>
                 <a href="#services" class="hover:text-black dark:hover:text-white transition-colors" data-i18n="nav.services">SERVICES</a>
             </nav>
 
             <!-- Logo (Center) -->
             <div class="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
-                <span class="font-black text-xl tracking-tighter text-black dark:text-white">PORTFOLIO</span>
+                <span class="font-black text-xl tracking-tighter text-black dark:text-white">YUENYONG.</span>
             </div>
             <!-- Mobile Logo -->
              <div class="md:hidden">
-                <span class="font-black text-lg tracking-tighter text-black dark:text-white">PORTFOLIO</span>
+                <span class="font-black text-lg tracking-tighter text-black dark:text-white">YUENYONG.</span>
             </div>
 
             <!-- Right Icons -->
@@ -106,6 +214,7 @@
                     class="p-1 flex items-center justify-center font-bold text-xs w-8 h-8 rounded-full border border-current hover:scale-105 transition-transform"
                     id="lang-btn"
                     title="Switch Language"
+                    aria-label="Switch language"
                 >
                     TH
                 </button>
@@ -116,6 +225,7 @@
                     class="p-1 hover:scale-110 active:scale-95 transition-transform"
                     id="theme-btn"
                     title="Toggle Theme"
+                    aria-label="Toggle dark mode"
                 >
                     <i data-lucide="moon" class="w-6 h-6"></i>
                 </button>
@@ -126,6 +236,7 @@
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 border-t p-6 shadow-lg flex flex-col space-y-4 bg-white dark:bg-neutral-900 border-gray-200 dark:border-neutral-800">
             <a href="#about" class="font-bold text-lg" onclick="toggleMenu()" data-i18n="nav.about">ABOUT ME</a>
             <a href="#work" class="font-bold text-lg" onclick="toggleMenu()" data-i18n="nav.work">WORK</a>
+            <a href="#certifications" class="font-bold text-lg" onclick="toggleMenu()" data-i18n="nav.certifications">CERTIFICATIONS</a>
             <a href="#services" class="font-bold text-lg" onclick="toggleMenu()" data-i18n="nav.services">SERVICES</a>
             <div class="pt-4 border-t border-gray-200 dark:border-neutral-800">
                <input 
@@ -145,42 +256,39 @@
     <main class="flex-grow container mx-auto px-6 py-12 max-w-7xl">
         
         <!-- TEXT SECTION 1 (Hero) -->
-        <section id="about" class="mb-16 scroll-mt-24">
+        <section id="about" class="hero-section mb-16 scroll-mt-24">
+            <h1 class="text-sm md:text-base font-black tracking-[0.18em] uppercase text-black dark:text-white mb-5">YUENYONG KHANSANTHIA</h1>
+            <p class="text-xs font-bold tracking-[0.3em] text-gray-500 mb-4" data-i18n="hero.eyebrow">FULL-STACK WEB DEVELOPER</p>
             <h2 class="text-3xl md:text-5xl font-black uppercase mb-6 tracking-tight text-black dark:text-white" data-i18n="hero.title">
-                Web Developer
+                Full-Stack Web Developer
             </h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed max-w-4xl" data-i18n="hero.p1">
-                Final-year Information Technology student seeking a Web / Front-End Developer Internship. Experienced in building responsive, user-centric web applications using React, Next.js, and Tailwind CSS. Eager to apply clean code principles and UI/UX design to contribute to real-world software projects and learn within a collaborative team environment.
-            </p>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed max-w-4xl" data-i18n="hero.p1">Fourth-year Information Technology student seeking a Cooperative Education position as a Full-Stack or Front-end Developer. Experienced in building full-stack web applications using React, Next.js, TypeScript, and Node.js, including multi-tenant SaaS architecture, role-based access control, Prisma data modeling, and OAuth authentication.</p>
+            <div class="hero-contact flex flex-wrap gap-x-3 gap-y-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                <a href="tel:+66956673129" class="hover:underline" aria-label="Call Yuenyong">095-667-3129</a>
+                <a href="mailto:yuenyong.work@gmail.com" class="hover:underline" aria-label="Email Yuenyong">yuenyong.work@gmail.com</a>
+                <a href="https://github.com/alifeofbrooklyn" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub /alifeofbrooklyn</a>
+            </div>
         </section>
 
-        <!-- TEXT SECTION 2 (Projects Intro) -->
+        <!-- SKILLS / EXPERIENCE -->
         <section class="mb-20">
-            <h2 class="text-2xl md:text-3xl font-black uppercase mb-4 tracking-tight text-black dark:text-white" data-i18n="projects.title">
-                career objective
-            </h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed max-w-5xl text-sm md:text-base" data-i18n="projects.p1">
-                An ambitious and detail-oriented Junior Front-End Developer with a strong foundation in modern web technologies including React.js, Next.js, and Tailwind CSS. Passionate about bridging the gap between sophisticated UI/UX design and high-performance, clean code. Dedicated to continuous learning, building responsive web applications that deliver seamless user experiences, and mastering full-stack capabilities—including backend integration and database management. Eager to contribute technical creativity, problem-solving skills, and a strong collaborative mindset to a dynamic development team while driving meaningful digital solutions.
-            </p>
-            <div class="bg-gray-50 dark:bg-neutral-900 p-8 border border-gray-100 dark:border-neutral-800">
+            <div class="skills-panel bg-gray-50 dark:bg-neutral-900 p-8 border border-gray-100 dark:border-neutral-800">
                 <!-- Tech Stack & SKILLS -->
-                <h3 class="font-bold text-xl mb-6 text-black dark:text-white uppercase tracking-wider">Tech Stack & SKILLS</h3>
+                <h3 class="font-bold text-xl mb-6 text-black dark:text-white uppercase tracking-wider" data-i18n="skills.technical">Technical Skills</h3>
                 
                 <div class="space-y-4 mb-8">
-                    <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-                        <span class="font-bold text-black dark:text-white">Front-End :</span> HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Axios
-                    </div>
-                    <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-                        <span class="font-bold text-black dark:text-white">Backend :</span> Node.js, Express, REST API, MySQL
-                    </div>
-                    <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-                        <span class="font-bold text-black dark:text-white">Tools & Workflow Automation :</span> Git, GitHub, Figma, Postman, VS Code
-                    </div>
+                    <div class="skill-row text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed"><i data-lucide="braces" class="skill-icon" aria-hidden="true"></i><div class="skill-copy"><span class="font-bold text-black dark:text-white">Languages :</span> JavaScript (ES6+), TypeScript, HTML5, CSS3, SQL</div></div>
+                    <div class="skill-row text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed"><i data-lucide="layout-template" class="skill-icon" aria-hidden="true"></i><div class="skill-copy"><span class="font-bold text-black dark:text-white">Frontend :</span> React, Next.js, Vite, Tailwind CSS, Axios, Recharts</div></div>
+                    <div class="skill-row text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed"><i data-lucide="server" class="skill-icon" aria-hidden="true"></i><div class="skill-copy"><span class="font-bold text-black dark:text-white">Backend :</span> Node.js, Express.js, RESTful APIs, Next.js Route Handlers</div></div>
+                    <div class="skill-row text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed"><i data-lucide="database" class="skill-icon" aria-hidden="true"></i><div class="skill-copy"><span class="font-bold text-black dark:text-white">Database :</span> MySQL, PostgreSQL, Prisma ORM</div></div>
+                    <div class="skill-row text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed"><i data-lucide="shield-check" class="skill-icon" aria-hidden="true"></i><div class="skill-copy"><span class="font-bold text-black dark:text-white">Authentication :</span> JWT, bcrypt, Auth.js (NextAuth), Google OAuth 2.0</div></div>
+                    <div class="skill-row text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed"><i data-lucide="cloud-cog" class="skill-icon" aria-hidden="true"></i><div class="skill-copy"><span class="font-bold text-black dark:text-white">Cloud & Deployment :</span> Vercel, Supabase</div></div>
+                    <div class="skill-row text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed"><i data-lucide="wrench" class="skill-icon" aria-hidden="true"></i><div class="skill-copy"><span class="font-bold text-black dark:text-white">Tools :</span> Git, GitHub, Postman, Thunder Client, Figma, VS Code</div></div>
                 </div>
 
                 <!-- Soft Skills & Languages -->
                 <div class="pt-8 border-t border-gray-200 dark:border-neutral-800">
-                    <h3 class="font-bold text-xl mb-6 text-black dark:text-white uppercase tracking-wider">Soft Skills & Languages</h3>
+                    <h3 class="font-bold text-xl mb-6 text-black dark:text-white uppercase tracking-wider" data-i18n="skills.soft">Soft Skills & Languages</h3>
                     
                     <div class="space-y-4">
                         <div class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
@@ -197,170 +305,192 @@
             </div>
         </section>
 
+        <!-- EDUCATION / CO-OP PROFILE -->
+        <section id="education" class="border-t pt-16 mb-20 border-gray-200 dark:border-neutral-800 scroll-mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-[1.3fr_.7fr] gap-8 items-stretch">
+                <div class="p-8 bg-gray-50 dark:bg-neutral-900 border border-gray-100 dark:border-neutral-800">
+                    <p class="text-xs font-bold tracking-[0.25em] text-gray-500 mb-4" data-i18n="education.eyebrow">EDUCATION</p>
+                    <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-black dark:text-white mb-3" data-i18n="education.title">Information and Communication Technology</h2>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed" data-i18n="education.desc">2023–Present · Faculty of Information Technology, Sripatum University · Information and Communication Technology</p>
+                </div>
+                <div class="p-8 bg-black text-white dark:bg-white dark:text-black flex flex-col justify-between">
+                    <span class="text-xs font-bold tracking-[0.25em] opacity-60" data-i18n="education.gpaLabel">ACADEMIC PERFORMANCE</span>
+                    <div class="mt-8">
+                        <strong class="text-5xl font-black tracking-tighter">3.70</strong>
+                        <span class="block text-sm mt-1 opacity-70" data-i18n="education.gpa">GPA / 4.00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- FEATURED CARDS (Work Section) -->
         <section id="work" class="border-t pt-16 border-gray-200 dark:border-neutral-800 scroll-mt-20">
-            <div class="flex justify-between items-end mb-8">
-                <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-black dark:text-white" data-i18n="cards.sectionTitle">My Projects</h2>
-                <p id="no-results-msg" class="hidden text-sm text-gray-500">No projects found.</p>
+            <p id="no-results-msg" class="hidden text-sm text-gray-500 mb-6">No projects found.</p>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Taskly -->
+                <div onclick="openProjectPreview('https://taskly-saa-s.vercel.app/', 'TASKLY')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Taskly project preview" class="group project-card cursor-pointer block" data-keywords="taskly task management saas nextjs typescript prisma postgresql oauth kanban">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
+                        <div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#172554;--visual-end:#2563eb;"><span class="text-white/90 text-7xl font-black opacity-80">✓</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">01 / 02</span></div>
+                        <div class="absolute inset-0 bg-black/45 transition-opacity group-hover:bg-black/30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center z-10"><div class="text-center px-4"><h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title">TASKLY<br>TASK MANAGEMENT SaaS</h4><p class="text-gray-200 text-xs mt-2 uppercase tracking-widest">Next.js / TypeScript / Prisma</p></div></div>
+                    </div>
+                    <div class="p-4 border bg-gray-100 border-gray-100 dark:bg-neutral-900 dark:border-neutral-800 group-hover:border-black dark:group-hover:border-white transition-colors">
+                        <div class="flex justify-between gap-4 items-start"><h4 class="font-bold text-sm uppercase mb-1 text-black dark:text-white">TASK MANAGEMENT SaaS</h4><a href="https://taskly-saa-s.vercel.app/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline whitespace-nowrap">LIVE DEMO</a></div>
+                        <p class="text-xs text-gray-500 search-desc mb-3">A multi-tenant task management SaaS platform designed for collaborative teams.</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed"><strong>Key features:</strong> isolated workspaces, Owner/Admin/Member permissions, Google OAuth, drag-and-drop Kanban, optimistic updates, file attachments, and production deployment.</p>
+                        <p class="text-xs font-bold uppercase tracking-wide text-gray-700 dark:text-gray-300 mt-3">Technologies</p>
+                        <div class="project-tech text-gray-700 dark:text-gray-300"><span>Next.js App Router</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span><span>Auth.js</span><span>Supabase</span><span>Tailwind CSS</span></div>
+                    </div>
+                </div>
+
+                <!-- Shop Management System -->
+                <div onclick="openProjectPreview('https://github.com/alifeofbrooklyn', 'SHOP MANAGEMENT SYSTEM')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Shop Management System project preview" class="group project-card cursor-pointer block" data-keywords="shop management system react vite tailwind node express mysql jwt bcrypt inventory sales dashboard">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
+                        <div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#1c1917;--visual-end:#b45309;"><span class="text-white/90 text-7xl font-black opacity-80">▦</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">02 / 02</span></div>
+                        <div class="absolute inset-0 bg-black/45 transition-opacity group-hover:bg-black/30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center z-10"><div class="text-center px-4"><h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title">SHOP MANAGEMENT<br>SYSTEM</h4><p class="text-gray-200 text-xs mt-2 uppercase tracking-widest">React / Node.js / MySQL</p></div></div>
+                    </div>
+                    <div class="p-4 border bg-black text-white border-black dark:bg-white dark:text-black dark:border-white group-hover:bg-gray-900 dark:group-hover:bg-gray-100 transition-colors">
+                        <div class="flex justify-between gap-4 items-start"><h4 class="font-bold text-sm uppercase mb-1">FULL-STACK WEB APP</h4><a href="https://github.com/alifeofbrooklyn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline whitespace-nowrap">GITHUB</a></div>
+                        <p class="text-xs text-gray-300 dark:text-gray-800 search-desc mb-3">A full-stack web application for managing products, inventory, and sales operations.</p>
+                        <p class="text-xs text-gray-300 dark:text-gray-800 leading-relaxed"><strong>Key features:</strong> JWT authentication, secure password hashing, inventory tracking, automatic stock deduction, sales records, and a dashboard with data visualizations.</p>
+                        <p class="text-xs font-bold uppercase tracking-wide mt-3">Technologies</p>
+                        <div class="project-tech"><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Node.js</span><span>Express.js</span><span>MySQL</span><span>JWT</span><span>bcrypt</span></div>
+                    </div>
+                </div>
+
+                <!-- Additional portfolio projects -->
+                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Joji-a.lifeofbrooklyn/', 'FOR JOJI')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open For Joji project preview" class="group project-card cursor-pointer block" data-keywords="joji sound music web experience">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:border-neutral-800"><div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#111827;--visual-end:#7c3aed;"><span class="text-white/90 text-7xl font-black opacity-80">♪</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">03 / 09</span></div><div class="absolute inset-0 bg-black/45"></div><div class="absolute inset-0 flex items-center justify-center z-10"><h4 class="text-white font-black text-3xl uppercase tracking-tighter text-center search-title">FOR JOJI<br>DISCOVER YOUR SOUND</h4></div></div>
+                    <div class="p-4 border bg-gray-100 dark:bg-neutral-900 dark:border-neutral-800"><div class="flex justify-between gap-4"><h4 class="font-bold text-sm uppercase text-black dark:text-white">WEB EXPERIENCE</h4><a href="https://alifeofbrooklyn.github.io/Joji-a.lifeofbrooklyn/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline">LIVE SITE</a></div><p class="text-xs text-gray-500 search-desc mt-2">An interactive music discovery experience inspired by Joji’s visual identity.</p><p class="text-xs font-bold uppercase tracking-wide text-gray-700 dark:text-gray-300 mt-3">Technologies</p><div class="project-tech text-gray-700 dark:text-gray-300"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive UI</span><span>Interactive Audio</span></div></div>
+                </div>
+
+                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/E-commerce-a.lifeofbrooklyn/', 'NEXUS STORE')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Nexus Store project preview" class="group project-card cursor-pointer block" data-keywords="nexus store ecommerce shop online shopping">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:border-neutral-800"><div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#111827;--visual-end:#b45309;"><span class="text-white/90 text-7xl font-black opacity-80">✦</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">04 / 09</span></div><div class="absolute inset-0 bg-black/45"></div><div class="absolute inset-0 flex items-center justify-center z-10"><h4 class="text-white font-black text-3xl uppercase tracking-tighter text-center search-title">NEXUS STORE<br>2025 E-COMMERCE</h4></div></div>
+                    <div class="p-4 border bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"><div class="flex justify-between gap-4"><h4 class="font-bold text-sm uppercase">E-COMMERCE</h4><a href="https://alifeofbrooklyn.github.io/E-commerce-a.lifeofbrooklyn/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline">LIVE SITE</a></div><p class="text-xs text-gray-300 dark:text-gray-800 search-desc mt-2">A modern e-commerce interface focused on product discovery and online shopping.</p><p class="text-xs font-bold uppercase tracking-wide mt-3">Technologies</p><div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Product UI</span><span>Responsive Design</span></div></div>
+                </div>
+
+                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Xinsooo-a.lifeofbrooklyn/', 'XINSOO')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Xinsoo project preview" class="group project-card cursor-pointer block" data-keywords="xinsoo shin su hyun artist portfolio">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:border-neutral-800"><div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#312e81;--visual-end:#be185d;"><span class="text-white/90 text-7xl font-black opacity-80">◌</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">05 / 09</span></div><div class="absolute inset-0 bg-black/45"></div><div class="absolute inset-0 flex items-center justify-center z-10"><h4 class="text-white font-black text-3xl uppercase tracking-tighter text-center search-title">XINSOO<br>SHIN SU-HYUN</h4></div></div>
+                    <div class="p-4 border bg-gray-100 dark:bg-neutral-900 dark:border-neutral-800"><div class="flex justify-between gap-4"><h4 class="font-bold text-sm uppercase text-black dark:text-white">ARTIST SHOWCASE</h4><a href="https://alifeofbrooklyn.github.io/Xinsooo-a.lifeofbrooklyn/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline">LIVE SITE</a></div><p class="text-xs text-gray-500 search-desc mt-2">A visual artist portfolio designed to present work through an editorial-style experience.</p><p class="text-xs font-bold uppercase tracking-wide text-gray-700 dark:text-gray-300 mt-3">Technologies</p><div class="project-tech text-gray-700 dark:text-gray-300"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Gallery Layout</span><span>Responsive UI</span></div></div>
+                </div>
+
+                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Space-Ideas-a.lifeofbrooklyn/', 'SPACE IDEAS')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Space Ideas project preview" class="group project-card cursor-pointer block" data-keywords="space ideas room decoration interior guide">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:border-neutral-800"><div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#0f172a;--visual-end:#0f766e;"><span class="text-white/90 text-7xl font-black opacity-80">⌂</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">06 / 09</span></div><div class="absolute inset-0 bg-black/45"></div><div class="absolute inset-0 flex items-center justify-center z-10"><h4 class="text-white font-black text-3xl uppercase tracking-tighter text-center search-title">SPACE IDEAS<br>INTERIOR GUIDE</h4></div></div>
+                    <div class="p-4 border bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"><div class="flex justify-between gap-4"><h4 class="font-bold text-sm uppercase">BLOG / GUIDE</h4><a href="https://alifeofbrooklyn.github.io/Space-Ideas-a.lifeofbrooklyn/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline">LIVE SITE</a></div><p class="text-xs text-gray-300 dark:text-gray-800 search-desc mt-2">An editorial-style guide to interior decoration ideas and room aesthetics.</p><p class="text-xs font-bold uppercase tracking-wide mt-3">Technologies</p><div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Content Design</span><span>Responsive Layout</span></div></div>
+                </div>
+
+                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/happroject-a.lifeofbrooklyn/', 'HBD CARD')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open HBD Card project preview" class="group project-card cursor-pointer block" data-keywords="hbd birthday card greetings interactive ui">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:border-neutral-800"><div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#164e63;--visual-end:#0891b2;"><span class="text-white/90 text-7xl font-black opacity-80">✉</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">07 / 09</span></div><div class="absolute inset-0 bg-black/45"></div><div class="absolute inset-0 flex items-center justify-center z-10"><h4 class="text-white font-black text-3xl uppercase tracking-tighter text-center search-title">HBD CARD<br>DIGITAL GREETINGS</h4></div></div>
+                    <div class="p-4 border bg-gray-100 dark:bg-neutral-900 dark:border-neutral-800"><div class="flex justify-between gap-4"><h4 class="font-bold text-sm uppercase text-black dark:text-white">INTERACTIVE UI</h4><a href="https://alifeofbrooklyn.github.io/happroject-a.lifeofbrooklyn/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline">LIVE SITE</a></div><p class="text-xs text-gray-500 search-desc mt-2">An interactive digital birthday card designed for personal greetings and sharing.</p><p class="text-xs font-bold uppercase tracking-wide text-gray-700 dark:text-gray-300 mt-3">Technologies</p><div class="project-tech text-gray-700 dark:text-gray-300"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Animation</span><span>Interactive UI</span></div></div>
+                </div>
+
+                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Brand-Website-a.lifeofbrooklyn/', 'KORE')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open KORE project preview" class="group project-card cursor-pointer block" data-keywords="kore brand website branding">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:border-neutral-800"><div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#1c1917;--visual-end:#dc2626;"><span class="text-white/90 text-7xl font-black opacity-80">K</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">08 / 09</span></div><div class="absolute inset-0 bg-black/45"></div><div class="absolute inset-0 flex items-center justify-center z-10"><h4 class="text-white font-black text-3xl uppercase tracking-tighter text-center search-title">KORE<br>BRAND WEBSITE</h4></div></div>
+                    <div class="p-4 border bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"><div class="flex justify-between gap-4"><h4 class="font-bold text-sm uppercase">BRAND WEBSITE</h4><a href="https://alifeofbrooklyn.github.io/Brand-Website-a.lifeofbrooklyn/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline">LIVE SITE</a></div><p class="text-xs text-gray-300 dark:text-gray-800 search-desc mt-2">A brand-focused website built to communicate a distinctive visual identity.</p><p class="text-xs font-bold uppercase tracking-wide mt-3">Technologies</p><div class="project-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Brand UI</span><span>Responsive Design</span></div></div>
+                </div>
+
+                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/GymDiscipline-a.lifeofbrooklyn/', 'GYM DISCIPLINE')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Gym Discipline project preview" class="group project-card cursor-pointer block" data-keywords="gym discipline fitness portfolio lifestyle">
+                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:border-neutral-800"><div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#14532d;--visual-end:#84cc16;"><span class="text-white/90 text-7xl font-black opacity-80">↗</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">09 / 09</span></div><div class="absolute inset-0 bg-black/45"></div><div class="absolute inset-0 flex items-center justify-center z-10"><h4 class="text-white font-black text-3xl uppercase tracking-tighter text-center search-title">GYM<br>DISCIPLINE</h4></div></div>
+                    <div class="p-4 border bg-gray-100 dark:bg-neutral-900 dark:border-neutral-800"><div class="flex justify-between gap-4"><h4 class="font-bold text-sm uppercase text-black dark:text-white">PERSONAL PROJECT</h4><a href="https://alifeofbrooklyn.github.io/GymDiscipline-a.lifeofbrooklyn/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs underline">LIVE SITE</a></div><p class="text-xs text-gray-500 search-desc mt-2">A personal lifestyle project focused on fitness, consistency, and discipline.</p><p class="text-xs font-bold uppercase tracking-wide text-gray-700 dark:text-gray-300 mt-3">Technologies</p><div class="project-tech text-gray-700 dark:text-gray-300"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Content Layout</span><span>Responsive UI</span></div></div>
+                </div>
+
             </div>
-            
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Joji-a.lifeofbrooklyn/', 'FOR JOJI')" class="group project-card cursor-pointer block" data-keywords="joji sound music web">
-                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                           <div class="text-center px-4">
-                             <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c1_title_sub">FOR JOJI<br>DISCOVER YOUR SOUND</h4>
-                             <p class="text-gray-300 text-xs mt-2 uppercase tracking-widest" data-i18n="cards.c1_stack">Web Experience</p>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="p-4 border bg-gray-100 border-gray-100 dark:bg-neutral-900 dark:border-neutral-800 group-hover:border-black dark:group-hover:border-white transition-colors">
-                       <h4 class="font-bold text-sm uppercase mb-1 text-black dark:text-white" data-i18n="cards.c1_tag">CASE STUDY</h4>
-                       <p class="text-xs text-gray-500 search-desc" data-i18n="cards.c1_desc">An interactive sound discovery platform.</p>
-                    </div>
+        </section>
+
+        <!-- CERTIFICATIONS & TRAINING -->
+        <section id="certifications" class="border-t pt-16 mb-20 border-gray-200 dark:border-neutral-800 scroll-mt-20">
+            <div class="flex items-end justify-between gap-6 mb-8">
+                <div>
+                    <p class="text-xs font-bold tracking-[0.25em] text-gray-500 mb-3" data-i18n="certifications.eyebrow">PROFESSIONAL DEVELOPMENT</p>
+                    <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-black dark:text-white" data-i18n="certifications.title">Certifications & Training</h2>
                 </div>
-
-                <!-- Card 2 -->
-                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Space-Ideas-a.lifeofbrooklyn/', 'SPACE IDEAS')" class="group project-card cursor-pointer block" data-keywords="space ideas room decoration interior">
-                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-800 dark:border-neutral-800">
-                        <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                          <div class="text-center px-4">
-                             <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c2_title_sub">SPACE-IDEAS<br>INTERIOR GUIDE</h4>
-                             <p class="text-gray-300 text-xs mt-2 uppercase tracking-widest" data-i18n="cards.c2_stack">React / Content</p>
-                           </div>
+                <i data-lucide="award" class="w-8 h-8 text-black dark:text-white" aria-hidden="true"></i>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                    <div class="relative mb-5">
+                        <img
+                            src="./assets/certificates/Certificate1.jpg"
+                            alt="Certificate 1 preview"
+                            class="certificate-image"
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"
+                        >
+                        <div class="certificate-placeholder hidden">
+                            <div>
+                                <i data-lucide="file-badge" class="w-10 h-10 mx-auto mb-3 text-gray-400" aria-hidden="true"></i>
+                                <p class="text-xs font-bold tracking-wide text-gray-500" data-i18n="certifications.imagePlaceholder">Add certificate image</p>
+                                <p class="text-xs text-gray-400 mt-1">assets/certificates/Certificate1.jpg</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-4 border bg-black text-white border-black dark:bg-white dark:text-black dark:border-white group-hover:bg-gray-900 dark:group-hover:bg-gray-100 transition-colors">
-                       <h4 class="font-bold text-sm uppercase mb-1" data-i18n="cards.c2_tag">BLOG / GUIDE</h4>
-                       <p class="text-xs text-gray-300 dark:text-gray-800 search-desc" data-i18n="cards.c2_desc">Room decoration ideas for various styles.</p>
-                    </div>
-                </div>
+                    <p class="text-xs font-bold tracking-widest text-gray-500">2025-04-25</p>
+                    <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Development and Basic Concepts of Cloud Computing</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by Huawei Talent</p>
+                </article>
 
-                 <!-- Card 3 -->
-                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/E-commerce-a.lifeofbrooklyn/', 'NEXUS STORE')" class="group project-card cursor-pointer block" data-keywords="nexus store ecommerce shop">
-                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                           <div class="text-center px-4">
-                             <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c3_title_sub">NEXUS STORE<br>2025 E-COMMERCE</h4>
-                             <p class="text-gray-300 text-xs mt-2 uppercase tracking-widest" data-i18n="cards.c3_stack">Full Stack</p>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="p-4 border bg-gray-100 border-gray-100 dark:bg-neutral-900 dark:border-neutral-800 group-hover:border-black dark:group-hover:border-white transition-colors">
-                       <h4 class="font-bold text-sm uppercase mb-1 text-black dark:text-white" data-i18n="cards.c3_tag">WEB APPLICATION</h4>
-                       <p class="text-xs text-gray-500 search-desc" data-i18n="cards.c3_desc">Next-gen online shopping platform.</p>
-                    </div>
-                </div>
+                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                    <img src="./assets/certificates/Certificate2.jpg" alt="Certificate 2 preview" class="certificate-image mb-5" loading="lazy">
+                    <p class="text-xs font-bold tracking-widest text-gray-500">2025-04-23</p>
+                    <h3 class="font-bold text-lg mt-2 text-black dark:text-white">HCIA-Cloud Computing V5.0 Course</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by Huawei Talent Online</p>
+                </article>
 
-                <!-- Card 4 -->
-                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Xinsooo-a.lifeofbrooklyn/', 'XINSOO')" class="group project-card cursor-pointer block" data-keywords="xinsoo shin su-hyun artist portfolio">
-                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-800 dark:border-neutral-800">
-                        <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                          <div class="text-center px-4">
-                             <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c4_title_sub">XINSOO<br>SHIN SU-HYUN</h4>
-                             <p class="text-gray-300 text-xs mt-2 uppercase tracking-widest" data-i18n="cards.c4_stack">Portfolio</p>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="p-4 border bg-black text-white border-black dark:bg-white dark:text-black dark:border-white group-hover:bg-gray-900 dark:group-hover:bg-gray-100 transition-colors">
-                       <h4 class="font-bold text-sm uppercase mb-1" data-i18n="cards.c4_tag">ARTIST SHOWCASE</h4>
-                       <p class="text-xs text-gray-300 dark:text-gray-800 search-desc" data-i18n="cards.c4_desc">Official portfolio for artist Shin Su-hyun.</p>
-                    </div>
-                </div>
+                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                    <img src="./assets/certificates/Certificate3.jpg" alt="Certificate 3 preview" class="certificate-image mb-5" loading="lazy">
+                    <p class="text-xs font-bold tracking-widest text-gray-500">Valid until 2029-07-21</p>
+                    <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Huawei Cloud Developer Certification — HCDA-AI</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by Huawei Cloud</p>
+                </article>
 
-                <!-- Card 5 -->
-                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/happroject-a.lifeofbrooklyn/', 'HBD CARD')" class="group project-card cursor-pointer block" data-keywords="hbd birthday card greetings">
-                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                           <div class="text-center px-4">
-                             <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c5_title_sub">HBD CARD<br>DIGITAL GREETINGS</h4>
-                             <p class="text-gray-300 text-xs mt-2 uppercase tracking-widest" data-i18n="cards.c5_stack">Interactive UI</p>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="p-4 border bg-gray-100 border-gray-100 dark:bg-neutral-900 dark:border-neutral-800 group-hover:border-black dark:group-hover:border-white transition-colors">
-                       <h4 class="font-bold text-sm uppercase mb-1 text-black dark:text-white" data-i18n="cards.c5_tag">WEB APP</h4>
-                       <p class="text-xs text-gray-500 search-desc" data-i18n="cards.c5_desc">Platform for sending digital birthday cards.</p>
-                    </div>
-                </div>
+                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                    <img src="./assets/certificates/Certificate4.jpg" alt="Certificate 4 preview" class="certificate-image mb-5" loading="lazy">
+                    <p class="text-xs font-bold tracking-widest text-gray-500">2025-04-25</p>
+                    <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Cloud Basics: Development and Basic Concepts (CRA Training Program)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by Huawei Talent</p>
+                </article>
 
-                <!-- Card 6 -->
-                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/Brand-Website-a.lifeofbrooklyn/', 'KORE')" class="group project-card cursor-pointer block" data-keywords="KORE-Brand-Website">
-                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-800 dark:border-neutral-800">
-                        <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                          <div class="text-center px-4">
-                             <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c6_title_sub">KORE<br>Brand-Website</h4>
-                             <p class="text-gray-300 text-xs mt-2 uppercase tracking-widest" data-i18n="cards.c6_stack">Brand-Website</p>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="p-4 border bg-black text-white border-black dark:bg-white dark:text-black dark:border-white group-hover:bg-gray-900 dark:group-hover:bg-gray-100 transition-colors">
-                       <h4 class="font-bold text-sm uppercase mb-1" data-i18n="cards.c6_tag">WEB APPLICATION</h4>
-                       <p class="text-xs text-gray-300 dark:text-gray-800 search-desc" data-i18n="cards.c6_desc">Brand memorable and different from your competitors.</p>
-                    </div>
-                </div>
+                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                    <img src="./assets/certificates/Certificate5.png" alt="Certificate 5 preview" class="certificate-image mb-5" loading="lazy">
+                    <p class="text-xs font-bold tracking-widest text-gray-500">2024-11-06</p>
+                    <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Google UX Design Professional Certificate</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by Google through Coursera · 7 courses</p>
+                </article>
 
-                <!-- Card 7 -->
-                <div onclick="openProjectPreview('https://alifeofbrooklyn.github.io/GymDiscipline-a.lifeofbrooklyn/', 'Gym Discipline')" class="group project-card cursor-pointer block" data-keywords="Gym Discipline">
-                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                           <div class="text-center px-4">
-                             <h4 class="text-white font-black text-3xl uppercase tracking-tighter leading-none mb-2 search-title" data-i18n-html="cards.c7_title_sub">Gym<br>Discipline</h4>
-                             <p class="text-gray-300 text-xs mt-2 uppercase tracking-widest" data-i18n="cards.c7_stack">Portfolio</p>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="p-4 border bg-gray-100 border-gray-100 dark:bg-neutral-900 dark:border-neutral-800 group-hover:border-black dark:group-hover:border-white transition-colors">
-                       <h4 class="font-bold text-sm uppercase mb-1 text-black dark:text-white" data-i18n="cards.c7_tag">EVERYDAY LIFE</h4>
-                       <p class="text-xs text-gray-500 search-desc" data-i18n="cards.c7_desc">Official Portfolio.</p>
-                    </div>
-                </div>
+                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                    <img src="./assets/certificates/Certificate6.png" alt="Certificate 6 preview" class="certificate-image mb-5" loading="lazy">
+                    <p class="text-xs font-bold tracking-widest text-gray-500">2023-09-17</p>
+                    <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Cloud-Based Database</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by Thai MOOC · 10-hour course</p>
+                </article>
 
-                <!-- Card 0: GET IN TOUCH -->
-                <a href="https://github.com/alifeofbrooklyn" target="_blank" class="group project-card cursor-pointer block" data-keywords="contact email touch">
-                    <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
-                        <div class="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50"></div>
-                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                            <div class="text-center px-4">
-                             <i data-lucide="mail" class="text-white mx-auto mb-2 w-12 h-12"></i>
-                             <h4 class="text-white font-black text-2xl uppercase tracking-tighter search-title" data-i18n="cards.c0_title">GET IN TOUCH</h4>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="p-4 border bg-black text-white border-black dark:bg-white dark:text-black dark:border-white group-hover:bg-gray-900 dark:group-hover:bg-gray-100 transition-colors">
-                       <h4 class="font-bold text-sm uppercase mb-1" data-i18n="cards.c0_tag">CONTACT ME</h4>
-                       <p class="text-xs text-gray-300 dark:text-gray-800 search-desc" data-i18n="cards.c0_desc">Let's build something great together.</p>
-                    </div>
-                </a>
-
+                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                    <img src="./assets/certificates/Certificate7.png" alt="Certificate 7 preview" class="certificate-image mb-5" loading="lazy">
+                    <p class="text-xs font-bold tracking-widest text-gray-500">2024-03-23</p>
+                    <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Basic Cybersecurity</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by MOOC Cybersecurity Learning Platform / NCSA Thailand</p>
+                </article>
             </div>
         </section>
 
         <!-- SERVICES SECTION -->
         <section id="services" class="border-t pt-16 border-gray-200 dark:border-neutral-800 scroll-mt-20 mb-16">
             <h2 class="text-2xl md:text-3xl font-black uppercase mb-8 tracking-tight text-black dark:text-white" data-i18n="services.title">
-                SERVICES
+                Services
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Service 1 -->
                 <div class="p-6 bg-gray-50 dark:bg-neutral-900 border border-transparent hover:border-black dark:hover:border-white transition-colors duration-300">
                     <i data-lucide="monitor" class="w-10 h-10 mb-4 text-black dark:text-white"></i>
                     <h4 class="font-bold text-lg mb-2 text-black dark:text-white tracking-wide" data-i18n="services.s1_title">WEB DEVELOPMENT</h4>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="services.s1_desc">High-performance websites built with modern technologies like React, Vue, and Tailwind CSS.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="services.s1_desc">Full-stack web applications built with React, Next.js, TypeScript, Node.js, and modern database tools.</p>
                 </div>
                 <!-- Service 2 -->
                 <div class="p-6 bg-gray-50 dark:bg-neutral-900 border border-transparent hover:border-black dark:hover:border-white transition-colors duration-300">
                     <i data-lucide="pen-tool" class="w-10 h-10 mb-4 text-black dark:text-white"></i>
                     <h4 class="font-bold text-lg mb-2 text-black dark:text-white tracking-wide" data-i18n="services.s2_title">UI/UX DESIGN</h4>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="services.s2_desc">Intuitive and beautiful user interfaces designed for optimal user experience and conversion.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="services.s2_desc">Clean and accessible interfaces shaped by UI/UX principles, responsive layouts, and thoughtful interaction design.</p>
                 </div>
             </div>
         </section>
@@ -370,9 +500,9 @@
     <!-- FOOTER -->
     <footer class="bg-white dark:bg-black border-t border-gray-200 dark:border-neutral-800 pt-16 pb-8 text-gray-600 dark:text-gray-400 transition-colors duration-300">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-20 max-w-2xl mx-auto mb-16">
                 <!-- Column 1 -->
-                <div>
+                <div class="min-w-0">
                     <h5 class="font-bold text-sm mb-4 text-black dark:text-white" data-i18n="footer.help">HELP</h5>
                     <ul class="space-y-2 text-sm">
                         <li><a href="javascript:void(0)" onclick="openFAQModal()" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.faq">FAQ</a></li>
@@ -380,50 +510,22 @@
                 </div>
 
                 <!-- Column 2 -->
-                <div>
+                <div class="min-w-0">
                     <h5 class="font-bold text-sm mb-4 text-black dark:text-white" data-i18n="footer.pages">PAGES</h5>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.projects">Projects</a></li>
-                        <li><a href="#" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.resume">Resume</a></li>
-                        <li><a href="#" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.blog">Blog</a></li>
+                        <li><a href="#education" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.education">Education</a></li>
+                        <li><a href="#work" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.projects">Projects</a></li>
+                        <li><a href="./Yuenyong_Khansanthia_Resume.pdf" target="_blank" rel="noopener noreferrer" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.resume">Resume</a></li>
+                        <li><a href="https://github.com/alifeofbrooklyn" target="_blank" rel="noopener noreferrer" class="hover:underline transition-colors hover:text-black dark:hover:text-white" data-i18n="footer.links.blog">Blog</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3 (SOCIALS - แก้ไขแล้วเหลือแค่ GitHub, LinkedIn, Discord) -->
-                <div>
-                    <h5 class="font-bold text-sm mb-4 text-black dark:text-white" data-i18n="footer.socials">SOCIALS</h5>
-                    <div class="flex flex-wrap gap-4 text-black dark:text-white">
-                        
-                        <!-- GitHub -->
-                        <a href="https://github.com/alifeofbrooklyn" target="_blank" title="GitHub" class="transition-colors hover:text-gray-600 dark:hover:text-gray-400">
-                            <i data-lucide="github" class="w-5 h-5"></i>
-                        </a>
-
-                        <!-- LinkedIn -->
-                        <a href="http://www.linkedin.com/in/alifeofbrooklyn" target="_blank" title="LinkedIn" class="transition-colors hover:text-gray-600 dark:hover:text-gray-400">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                        </a>
-
-                        <!-- Discord -->
-                        <a href="https://discord.com/invite/43pEvXVWGv" target="_blank" title="Discord" class="transition-colors hover:text-gray-600 dark:hover:text-gray-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419z"/>
-                            </svg>
-                        </a>
-
-                    </div>
-                    <div class="mt-8">
-                        <p class="text-xs text-gray-500 max-w-xs" data-i18n="footer.socialDesc">
-                            The Portfolio community is devoted to unlocking potential through conditioning and the things we do today to prepare for tomorrow.
-                        </p>
-                    </div>
-                </div>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200 dark:border-neutral-800">
                 <div class="flex items-center space-x-4 mb-4 md:mb-0">
                     <span class="font-black text-xl tracking-tighter text-black dark:text-white">PORTFOLIO.</span>
-                    <span class="text-xs text-gray-500">© 2025 | Life Of Brooklyn | <span data-i18n="footer.rights">All Rights Reserved</span></span>
+                    <span class="text-xs text-gray-500">© <span id="year">2025</span> | Life Of Brooklyn | <span data-i18n="footer.rights">All Rights Reserved</span></span>
                 </div>
             </div>
         </div>
@@ -433,7 +535,7 @@
     <!-- FAQ MODAL -->
     <div id="faq-modal" class="hidden fixed inset-0 z-[70] bg-white dark:bg-black overflow-y-auto animate-fade-in">
         <!-- Close Button -->
-        <button onclick="closeFAQModal()" class="absolute top-6 right-6 p-2 hover:bg-gray-100 dark:hover:bg-neutral-900 rounded-full transition-colors">
+        <button onclick="closeFAQModal()" aria-label="Close FAQ" class="absolute top-6 right-6 p-2 hover:bg-gray-100 dark:hover:bg-neutral-900 rounded-full transition-colors">
             <i data-lucide="x" class="w-6 h-6 text-black dark:text-white"></i>
         </button>
 
@@ -474,10 +576,10 @@
         <div class="flex justify-between items-center p-4 bg-black text-white border-b border-neutral-800">
             <h3 id="modal-project-title" class="font-bold text-lg uppercase truncate">Project Title</h3>
             <div class="flex items-center space-x-4">
-                <a id="modal-external-link" href="#" target="_blank" class="text-sm text-gray-400 hover:text-white flex items-center">
+                <a id="modal-external-link" href="#" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-400 hover:text-white flex items-center">
                     <i data-lucide="external-link" class="w-4 h-4 mr-1"></i> Open New Tab
                 </a>
-                <button onclick="closeProjectPreview()" class="p-1 hover:bg-neutral-800 rounded-full transition-colors">
+                <button onclick="closeProjectPreview()" aria-label="Close project preview" class="p-1 hover:bg-neutral-800 rounded-full transition-colors">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -487,7 +589,7 @@
             <div id="modal-loader" class="absolute inset-0 flex items-center justify-center text-white">
                 <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
             </div>
-            <iframe id="project-iframe" class="w-full h-full bg-white" src="" onload="document.getElementById('modal-loader').classList.add('hidden')"></iframe>
+            <iframe id="project-iframe" title="Project preview" class="w-full h-full bg-white" src="" onload="document.getElementById('modal-loader').classList.add('hidden')"></iframe>
         </div>
     </div>
 
@@ -498,20 +600,37 @@
             en: {
                 "nav.work": "WORK",
                 "nav.about": "ABOUT ME",
+                "nav.certifications": "CERTIFICATIONS",
                 "nav.services": "SERVICES",
                 "search.placeholder": "Search projects...",
-                "hero.title": "Web Developer",
-                "hero.p1": "Final-year Information Technology student seeking a Web / Front-End Developer Internship. Experienced in building responsive, user-centric web applications using React, Next.js, and Tailwind CSS. Eager to apply clean code principles and UI/UX design to contribute to real-world software projects and learn within a collaborative team environment.",
-                "projects.title": "Career Objective",
-                "projects.p1": "An ambitious and detail-oriented Junior Front-End Developer with a strong foundation in modern web technologies including React.js, Next.js, and Tailwind CSS. Passionate about bridging the gap between sophisticated UI/UX design and high-performance, clean code. Dedicated to continuous learning, building responsive web applications that deliver seamless user experiences, and mastering full-stack capabilities—including backend integration and database management. Eager to contribute technical creativity, problem-solving skills, and a strong collaborative mindset to a dynamic development team while driving meaningful digital solutions.",
+                "hero.eyebrow": "FULL-STACK WEB DEVELOPER",
+                "hero.title": "Full-Stack Web Developer",
+                "hero.p1": "Fourth-year Information Technology student seeking a Cooperative Education position as a Full-Stack or Front-end Developer. Experienced in building full-stack web applications using React, Next.js, TypeScript, and Node.js, including multi-tenant SaaS architecture, role-based access control, Prisma data modeling, and OAuth authentication.",
+                "education.eyebrow": "EDUCATION",
+                "education.title": "Information and Communication Technology",
+                "education.desc": "2023–Present · Faculty of Information Technology, Sripatum University",
+                "education.gpaLabel": "ACADEMIC PERFORMANCE",
+                "education.gpa": "GPA / 4.00",
+                "skills.technical": "Technical Skills",
+                "skills.soft": "Soft Skills & Languages",
+                "certifications.eyebrow": "PROFESSIONAL DEVELOPMENT",
+                "certifications.title": "Certifications & Training",
+                "certifications.emptyTitle": "Certifications will be updated soon.",
+                "certifications.emptyDesc": "Add your certificate image, title, issuer, year, and verification link to this section.",
+                "certifications.imagePlaceholder": "Add certificate image",
+                "certifications.sampleYear": "YEAR",
+                "certifications.sampleTitle": "Certificate title",
+                "certifications.sampleTitle2": "Certificate title",
+                "certifications.sampleTitle3": "Certificate title",
+                "certifications.sampleTitle4": "Certificate title",
+                "certifications.sampleIssuer": "Issued by — Organization name",
                 
                 "services.title": "SERVICES",
                 "services.s1_title": "WEB DEVELOPMENT",
-                "services.s1_desc": "High-performance websites built with modern technologies like React, Vue, and Tailwind CSS.",
+                "services.s1_desc": "Full-stack web applications built with React, Next.js, TypeScript, Node.js, and modern database tools.",
                 "services.s2_title": "UI/UX DESIGN",
-                "services.s2_desc": "Intuitive and beautiful user interfaces designed for optimal user experience and conversion.",
+                "services.s2_desc": "Clean and accessible interfaces shaped by UI/UX principles, responsive layouts, and thoughtful interaction design.",
 
-                "cards.sectionTitle": "My Projects",
                 "cards.c1_title_sub": "FOR JOJI<br>DISCOVER YOUR SOUND",
                 "cards.c1_stack": "Web Experience",
                 "cards.c1_tag": "CASE STUDY",
@@ -540,12 +659,12 @@
                 "cards.c6_title_sub": "KORE<br>Brand-Website",
                 "cards.c6_stack": "Full Stack",
                 "cards.c6_tag": "WEB APPLICATION",
-                "cards.c6_desc": "Brand memorable and different from your competitors.",
+                "cards.c6_desc": "A memorable brand identity that stands out from the competition.",
 
                 "cards.c7_title_sub": "Gym<br>Discipline",
                 "cards.c7_stack": "Portfolio",
                 "cards.c7_tag": "EVERYDAY LIFE",
-                "cards.c7_desc": "Official Portfolio Discipline Project.",
+                "cards.c7_desc": "A personal project focused on fitness and discipline.",
 
                 "cards.c0_title": "GET IN TOUCH",
                 "cards.c0_tag": "CONTACT ME",
@@ -553,39 +672,56 @@
 
                 "footer.help": "HELP",
                 "footer.pages": "PAGES",
-                "footer.socials": "SOCIALS",
                 "footer.rights": "All Rights Reserved",
-                "footer.socialDesc": "The Portfolio community is devoted to unlocking potential through conditioning and the things we do today to prepare for tomorrow.",
                 "footer.links.faq": "FAQ",
+                "footer.links.education": "Education",
                 "footer.links.projects": "Projects",
                 "footer.links.resume": "Resume",
                 "footer.links.blog": "Blog",
 
                 "faq.title": "FREQUENTLY ASKED QUESTIONS",
-                "faq.q1": "Are you currently looking for an internship?",
-                "faq.a1": "Yes! I am a final-year student actively seeking a Web/Front-End Developer internship to gain real-world experience and contribute to a professional team.",
+                "faq.q1": "Are you currently seeking a Cooperative Education opportunity?",
+                "faq.a1": "Yes. I am a fourth-year Information Technology student seeking a Cooperative Education position as a Full-Stack or Front-end Developer.",
                 "faq.q2": "What are your core technical skills?",
-                "faq.a2": "My main tech stack includes HTML, CSS, JavaScript, React.js, Next.js, and Tailwind CSS. I also have basic knowledge of backend tools like Node.js, Express, and MySQL.",
-                "faq.q3": "Are you open to learning new tools and frameworks?",
-                "faq.a3": "Absolutely. I am a fast learner with an agile mindset. I am highly adaptable and eager to learn any new technologies, tools, or workflows that your company uses."
+                "faq.a2": "My core stack includes React, Next.js, TypeScript, Node.js, Express.js, PostgreSQL, MySQL, Prisma, RESTful APIs, JWT, Auth.js, and Tailwind CSS.",
+                "faq.q3": "What kind of projects have you built?",
+                "faq.a3": "I have built a multi-tenant task management SaaS with role-based access control and OAuth, as well as a shop management system with inventory, sales, authentication, and dashboard features."
             },
             th: {
                 "nav.work": "ผลงาน",
                 "nav.about": "เกี่ยวกับฉัน",
+                "nav.certifications": "ใบประกาศนียบัตร",
                 "nav.services": "บริการ",
                 "search.placeholder": "ค้นหาโปรเจกต์...",
-                "hero.title": "นักพัฒนาเว็บไซต์",
-                "hero.p1": "นักศึกษาชั้นปีสุดท้ายสาขาเทคโนโลยีสารสนเทศ ที่กำลังมองหาโอกาสฝึกงานในตำแหน่ง Web หรือ Front-End Developer มีประสบการณ์ในการพัฒนาเว็บแอปพลิเคชันที่รองรับทุกหน้าจอและเน้นผู้ใช้งานเป็นศูนย์กลาง โดยใช้ React, Next.js และ Tailwind CSS มีความกระตือรือร้นที่จะนำหลักการเขียนโค้ดที่สะอาด (Clean Code) และการออกแบบ UI/UX ไปประยุกต์ใช้เพื่อร่วมสร้างสรรค์โปรเจกต์ซอฟต์แวร์จริง",
-                "projects.title": "จุดมุ่งหมายในการทำงาน",
-                "projects.p1": "นักพัฒนาเว็บไซต์ส่วนหน้าระดับเริ่มต้นผู้มีความมุ่งมั่นและใส่ใจในรายละเอียด มีพื้นฐานที่แข็งแกร่งในเทคโนโลยีเว็บสมัยใหม่ รวมถึง React.js, Next.js และ Tailwind CSS มีความหลงใหลในการเชื่อมช่องว่างระหว่างการออกแบบ UI/UX ที่ซับซ้อนเข้ากับโค้ดที่มีประสิทธิภาพสูง มุ่งมั่นที่จะเรียนรู้อย่างต่อเนื่อง พร้อมทำงานร่วมกับทีมที่มีประสบการณ์ เพื่อสร้างสรรค์ผลงานดิจิทัลโซลูชันที่มีคุณค่าและตอบโจทย์ผู้ใช้งาน",
+                "hero.eyebrow": "FULL-STACK WEB DEVELOPER",
+                "hero.title": "Full-Stack Web Developer",
+                "hero.p1": "นักศึกษาชั้นปีที่ 4 สาขาเทคโนโลยีสารสนเทศ กำลังมองหาสหกิจศึกษาในตำแหน่ง Full-Stack หรือ Front-end Developer มีประสบการณ์สร้างเว็บแอปพลิเคชันด้วย React, Next.js, TypeScript และ Node.js รวมถึง Multi-tenant SaaS, Role-based Access Control, Prisma และ OAuth",
+                "education.eyebrow": "การศึกษา",
+                "education.title": "เทคโนโลยีสารสนเทศและการสื่อสาร",
+                "education.desc": "พ.ศ. 2566–ปัจจุบัน · คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม",
+                "education.gpaLabel": "ผลการเรียน",
+                "education.gpa": "เกรดเฉลี่ย / 4.00",
+                "skills.technical": "ทักษะทางเทคนิค",
+                "skills.soft": "ทักษะด้านการทำงานและภาษา",
+                "certifications.eyebrow": "การพัฒนาวิชาชีพ",
+                "certifications.title": "ใบประกาศนียบัตรและการฝึกอบรม",
+                "certifications.emptyTitle": "จะเพิ่มข้อมูลใบประกาศนียบัตรเร็ว ๆ นี้",
+                "certifications.emptyDesc": "เพิ่มรูปใบประกาศ ชื่อหลักสูตร หน่วยงาน ปีที่ได้รับ และลิงก์ตรวจสอบในส่วนนี้",
+                "certifications.imagePlaceholder": "เพิ่มรูปใบประกาศ",
+                "certifications.sampleYear": "ปีที่ได้รับ",
+                "certifications.sampleTitle": "ชื่อใบประกาศนียบัตร",
+                "certifications.sampleTitle2": "ชื่อใบประกาศนียบัตร",
+                "certifications.sampleTitle3": "ชื่อใบประกาศนียบัตร",
+                "certifications.sampleTitle4": "ชื่อใบประกาศนียบัตร",
+                "certifications.sampleIssuer": "ออกโดย — ชื่อหน่วยงาน",
                 
                 "services.title": "ทักษะเพิ่มเติม",
                 "services.s1_title": "พัฒนาเว็บไซต์",
-                "services.s1_desc": "สร้างเว็บไซต์ประสิทธิภาพสูงด้วยเทคโนโลยีสมัยใหม่ เช่น React, Next.js และ Tailwind CSS",
+                "services.s1_desc": "พัฒนาเว็บแอปพลิเคชัน Full-stack ด้วย React, Next.js, TypeScript, Node.js และเครื่องมือฐานข้อมูลสมัยใหม่",
                 "services.s2_title": "ออกแบบ UI/UX",
-                "services.s2_desc": "เข้าใจหลักการออกแบบหน้าจอผู้ใช้ให้สวยงามและใช้งานง่าย เพื่อประสบการณ์ผู้ใช้ที่ดีที่สุด",
+                "services.s2_desc": "ออกแบบหน้าจอที่สะอาด เข้าถึงง่าย และรองรับทุกหน้าจอ โดยยึดหลัก UI/UX และการออกแบบ Interaction",
 
-                "cards.sectionTitle": "ผลงานของผม",
+                "cards.sectionTitle": "ผลงานที่คัดเลือก",
                 "cards.c1_title_sub": "FOR JOJI<br>DISCOVER YOUR SOUND",
                 "cards.c1_stack": "Web Experience",
                 "cards.c1_tag": "กรณีศึกษา",
@@ -627,10 +763,9 @@
 
                 "footer.help": "ช่วยเหลือ",
                 "footer.pages": "หน้าเว็บ",
-                "footer.socials": "โซเชียล",
                 "footer.rights": "สงวนลิขสิทธิ์",
-                "footer.socialDesc": "ชุมชน Portfolio นี้อุทิศตนเพื่อปลดล็อกศักยภาพผ่านการฝึกฝนและสิ่งที่เราทำในวันนี้เพื่อเตรียมพร้อมสำหรับวันพรุ่งนี้",
                 "footer.links.faq": "คำถามที่พบบ่อย",
+                "footer.links.education": "การศึกษา",
                 "footer.links.projects": "โปรเจกต์",
                 "footer.links.resume": "เรซูเม่",
                 "footer.links.blog": "บทความ",
@@ -646,8 +781,8 @@
         };
 
         // --- STATE ---
-        let currentLang = 'en';
-        let isDarkMode = false;
+        let currentLang = localStorage.getItem('portfolio-language') || 'en';
+        let isDarkMode = localStorage.getItem('portfolio-theme') === 'dark';
         let isMenuOpen = false;
         let isSearchOpen = false;
 
@@ -674,16 +809,19 @@
 
             // Update Button Text
             document.getElementById('lang-btn').textContent = currentLang === 'en' ? 'TH' : 'EN';
+            document.documentElement.lang = currentLang;
         }
 
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'th' : 'en';
+            localStorage.setItem('portfolio-language', currentLang);
             updateContent();
             if(document.getElementById('search-input').value) filterProjects();
         }
 
         function toggleTheme() {
             isDarkMode = !isDarkMode;
+            localStorage.setItem('portfolio-theme', isDarkMode ? 'dark' : 'light');
             const html = document.documentElement;
             const themeBtn = document.getElementById('theme-btn');
             
@@ -704,12 +842,29 @@
             
             if (isMenuOpen) {
                 menu.classList.remove('hidden');
+                document.querySelector('#navbar button[aria-controls="mobile-menu"]').setAttribute('aria-expanded', 'true');
                 menuIcon.parentElement.innerHTML = '<i data-lucide="x" id="menu-icon" class="w-6 h-6"></i>';
             } else {
                 menu.classList.add('hidden');
+                document.querySelector('#navbar button[aria-controls="mobile-menu"]').setAttribute('aria-expanded', 'false');
                 menuIcon.parentElement.innerHTML = '<i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>';
             }
             lucide.createIcons();
+        }
+
+
+        function handleCardKey(event, card) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                card.click();
+            }
+        }
+
+        function applySavedTheme() {
+            const html = document.documentElement;
+            const themeBtn = document.getElementById('theme-btn');
+            html.classList.toggle('dark', isDarkMode);
+            themeBtn.innerHTML = `<i data-lucide="${isDarkMode ? 'sun' : 'moon'}" class="w-6 h-6"></i>`;
         }
 
         // --- SEARCH FUNCTIONS ---
@@ -831,9 +986,43 @@
             }
         });
 
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeFAQModal();
+                closeProjectPreview();
+            }
+        });
+
+        function initScrollAnimations() {
+            const targets = document.querySelectorAll('main > section, .project-card, .skills-panel, footer');
+            targets.forEach((element, index) => {
+                element.classList.add('reveal');
+                element.style.setProperty('--reveal-index', index % 6);
+            });
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+                targets.forEach(element => element.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, observerInstance) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observerInstance.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+
+            targets.forEach(element => observer.observe(element));
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            applySavedTheme();
             lucide.createIcons();
             updateContent();
+            document.getElementById('year').textContent = new Date().getFullYear();
+            initScrollAnimations();
         });
 
     </script>
