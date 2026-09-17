@@ -58,6 +58,12 @@
         .bg-gray-50 { background-color: #f4f6fa; }
         .project-card { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
         .project-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(22, 35, 70, 0.10); }
+        .featured-project { position: relative; border: 1px solid rgba(49,94,251,.42); border-radius: 1rem; box-shadow: 0 12px 30px rgba(49,94,251,.12); }
+        .featured-project:hover { transform: translateY(-7px); box-shadow: 0 20px 42px rgba(49,94,251,.2); }
+        .featured-project::before { content: "FEATURED"; position: absolute; z-index: 20; top: .75rem; left: .75rem; padding: .28rem .55rem; border-radius: 999px; color: #fff; background: var(--accent); font-size: .58rem; font-weight: 800; letter-spacing: .14em; box-shadow: 0 5px 14px rgba(49,94,251,.3); }
+        .featured-project .project-visual::after { border-color: rgba(255,255,255,.7); }
+        .dark .featured-project { border-color: rgba(129,140,248,.7); box-shadow: 0 14px 34px rgba(49,94,251,.2); }
+        .dark .featured-project:hover { box-shadow: 0 22px 44px rgba(49,94,251,.3); }
         .certificate-image { border-color: var(--line); border-radius: 0.35rem; }
         #navbar { box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06); }
         #lang-btn { border-color: var(--accent); color: var(--accent); }
@@ -328,7 +334,7 @@
             <p id="no-results-msg" class="hidden text-sm text-gray-500 mb-6">No projects found.</p>
             <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Taskly -->
-                <div onclick="openProjectPreview('https://taskly-saa-s.vercel.app/', 'TASKLY')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Taskly project preview" class="group project-card cursor-pointer block" data-keywords="taskly task management saas nextjs typescript prisma postgresql oauth kanban">
+                <div onclick="openProjectPreview('https://taskly-saa-s.vercel.app/', 'TASKLY')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Taskly project preview" class="group project-card featured-project cursor-pointer block" data-keywords="taskly task management saas nextjs typescript prisma postgresql oauth kanban">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
                         <div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#172554;--visual-end:#2563eb;"><span class="text-white/90 text-7xl font-black opacity-80">✓</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">01 / 02</span></div>
                         <div class="absolute inset-0 bg-black/45 transition-opacity group-hover:bg-black/30"></div>
@@ -344,7 +350,7 @@
                 </div>
 
                 <!-- ShopStack -->
-                <div onclick="openProjectPreview('https://shopstack-pi.vercel.app/', 'SHOPSTACK')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open ShopStack project preview" class="group project-card cursor-pointer block" data-keywords="shopstack ecommerce nextjs typescript prisma postgresql stripe authjs zustand vercel admin dashboard">
+                <div onclick="openProjectPreview('https://shopstack-pi.vercel.app/', 'SHOPSTACK')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open ShopStack project preview" class="group project-card featured-project cursor-pointer block" data-keywords="shopstack ecommerce nextjs typescript prisma postgresql stripe authjs zustand vercel admin dashboard">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
                         <div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#0f172a;--visual-end:#0ea5e9;"><span class="text-white/90 text-7xl font-black opacity-80">$</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">02 / 08</span></div>
                         <div class="absolute inset-0 bg-black/45 transition-opacity group-hover:bg-black/30"></div>
@@ -360,7 +366,7 @@
                 </div>
 
                 <!-- Shop Management System -->
-                <div onclick="openProjectPreview('https://github.com/alifeofbrooklyn', 'SHOP MANAGEMENT SYSTEM')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Shop Management System project preview" class="group project-card cursor-pointer block" data-keywords="shop management system react vite tailwind node express mysql jwt bcrypt inventory sales dashboard">
+                <div onclick="openProjectPreview('https://github.com/alifeofbrooklyn/shop-management-system', 'SHOP MANAGEMENT SYSTEM')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Shop Management System project preview" class="group project-card featured-project cursor-pointer block" data-keywords="shop management system react vite tailwind node express mysql jwt bcrypt inventory sales dashboard">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
                         <div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#1c1917;--visual-end:#b45309;"><span class="text-white/90 text-7xl font-black opacity-80">▦</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">03 / 08</span></div>
                         <div class="absolute inset-0 bg-black/45 transition-opacity group-hover:bg-black/30"></div>
@@ -376,7 +382,7 @@
                 </div>
 
                 <!-- Mini Appointment Booking System -->
-                <div onclick="openProjectPreview('https://github.com/alifeofbrooklyn/miniappointment-booking-system', 'MINI APPOINTMENT BOOKING SYSTEM')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Mini Appointment Booking System project preview" class="group project-card cursor-pointer block" data-keywords="appointment booking react vite tailwind axios node express mysql crud validation scheduling">
+                <div onclick="openProjectPreview('https://github.com/alifeofbrooklyn/miniappointment-booking-system', 'MINI APPOINTMENT BOOKING SYSTEM')" onkeydown="handleCardKey(event, this)" role="button" tabindex="0" aria-label="Open Mini Appointment Booking System project preview" class="group project-card featured-project cursor-pointer block" data-keywords="appointment booking react vite tailwind axios node express mysql crud validation scheduling">
                     <div class="relative aspect-[4/3] mb-4 overflow-hidden border bg-black border-transparent dark:bg-neutral-900 dark:border-neutral-800">
                         <div class="absolute inset-0 project-visual flex items-center justify-between px-8" style="--visual-start:#172554;--visual-end:#06b6d4;"><span class="text-white/90 text-7xl font-black opacity-80">◷</span><span class="text-white/60 text-xs font-bold tracking-[0.35em]">04 / 09</span></div>
                         <div class="absolute inset-0 bg-black/45 transition-opacity group-hover:bg-black/30"></div>
