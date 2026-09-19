@@ -64,6 +64,11 @@
         .featured-project .project-visual::after { border-color: rgba(255,255,255,.55); }
         .dark .featured-project { border-top-color: #818cf8; box-shadow: 0 9px 24px rgba(0, 0, 0, .28); }
         .dark .featured-project:hover { box-shadow: 0 15px 32px rgba(0, 0, 0, .38); }
+        .featured-certificate { position: relative; border: 1px solid rgba(49,94,251,.38); border-top: 3px solid var(--accent); box-shadow: 0 10px 26px rgba(49,94,251,.12); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+        .featured-certificate::before { content: "FEATURED"; position: absolute; z-index: 10; top: .65rem; left: .65rem; padding: .22rem .48rem; border-radius: .3rem; color: #fff; background: var(--accent); font-size: .55rem; font-weight: 800; letter-spacing: .12em; box-shadow: 0 3px 8px rgba(49,94,251,.22); }
+        .featured-certificate:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(49,94,251,.18); border-color: rgba(49,94,251,.62); }
+        .dark .featured-certificate { border-color: rgba(129,140,248,.45); border-top-color: #818cf8; box-shadow: 0 10px 28px rgba(0,0,0,.34); }
+        .dark .featured-certificate:hover { box-shadow: 0 16px 36px rgba(0,0,0,.48); border-color: rgba(129,140,248,.72); }
         .certificate-image { border-color: var(--line); border-radius: 0.35rem; }
         #navbar { box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06); }
         #lang-btn { border-color: var(--accent); color: var(--accent); }
@@ -436,7 +441,7 @@
                 <i data-lucide="award" class="w-8 h-8 text-black dark:text-white" aria-hidden="true"></i>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                <article class="featured-certificate p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
                     <div class="relative mb-5">
                         <img
                             src="./assets/certificates/Certificate1.jpg"
@@ -465,21 +470,21 @@
                     <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by freeCodeCamp.org</p>
                 </article>
 
-                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                <article class="featured-certificate p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
                     <img src="./assets/certificates/Certificate3.jpg" alt="Certificate 3 preview" class="certificate-image mb-5" loading="lazy">
                     <p class="text-xs font-bold tracking-widest text-gray-500">Valid until 2029-07-21</p>
                     <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Huawei Cloud Developer Certification — HCDA-AI</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by Huawei Cloud</p>
                 </article>
 
-                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                <article class="featured-certificate p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
                     <img src="./assets/certificates/Certificate4.jpg" alt="Certificate 4 preview" class="certificate-image mb-5" loading="lazy">
                     <p class="text-xs font-bold tracking-widest text-gray-500">2025-04-25</p>
                     <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Cloud Basics: Development and Basic Concepts (CRA Training Program)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by Huawei Talent</p>
                 </article>
 
-                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                <article class="featured-certificate p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
                     <img src="./assets/certificates/Certificate5.png" alt="Certificate 5 preview" class="certificate-image mb-5" loading="lazy">
                     <p class="text-xs font-bold tracking-widest text-gray-500">2024-11-06</p>
                     <h3 class="font-bold text-lg mt-2 text-black dark:text-white">Google UX Design Professional Certificate</h3>
@@ -535,7 +540,7 @@
                     <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Issued by freeCodeCamp.org</p>
                 </article>
 
-                <article class="p-6 border bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
+                <article class="featured-certificate p-6 bg-gray-50 dark:bg-neutral-900 dark:border-neutral-800">
                     <img src="./assets/certificates/Certificate13.png" alt="Certificate 13 preview" class="certificate-image mb-5" loading="lazy">
                     <p class="text-xs font-bold tracking-widest text-gray-500">2026-09-19</p>
                     <h3 class="font-bold text-lg mt-2 text-black dark:text-white">freeCodeCamp — Legacy Full-Stack</h3>
